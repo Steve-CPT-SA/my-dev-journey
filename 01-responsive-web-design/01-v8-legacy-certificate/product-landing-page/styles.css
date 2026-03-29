@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background-color: #EAE2B7;
+  color: #333;
+  font-family: sans-serif;
+  padding-top: 70px;
+}
+#header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+#header-img{
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+#nav-bar{
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #005F73;
+  gap: 20px;
+  z-index: 1000;
+}
+.nav-link{
+  color: #FDFCDC;
+  text-decoration: none;
+  font-weight: bold;
+}
+#nav-bar .nav-link:hover{
+  color: #E9D8A6;
+}
+#tours{
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: flex-start;
+}
+.tour-section{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 132, 255, 0.7);
+}
+.tour-section img{
+  width: 100%;
+  display: block;
+}
+#preview{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+#booking{
+  text-align: center;
+  padding: 1rem;
+}
+#email{
+  padding: 0.5rem;
+  width: 250px;
+  max-width: 80%;
+  margin-right: 0.5rem;
+}
+#submit{
+  padding: 0.5rem 1rem;
+}
+#contact{
+  padding: 1rem;
+  text-align: center;
+}
+#contact a i.fa-youtube{
+  color:#ff0000;
+  margin-right: 0.4em;
+}
+#contact a{
+  color: #333;
+  text-decoration: none;
+}
+@media only screen and (max-width: 720px){
+  #tours{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #video iframe{
+    width: 100%;
+    height: auto;
+  }
+}

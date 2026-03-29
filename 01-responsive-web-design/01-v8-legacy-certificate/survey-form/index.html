@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCodeCamp Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">FreeCodeCampers Survey<img class="logo" src="https://play-lh.googleusercontent.com/MoaYYQjGtmGLhG9HbjCDKyj44kwHj1HfbCI2Am70elRm35vJ-u4y4X5uEJjP97MAAsU" alt="freecodecamp logo"></h1>
+    <p id="description">Help us to improve by filling out the form.</p>
+    <form id="survey-form" method="post" action='https://register-demo.freecodecamp.org'>
+    <fieldset>
+      <label id="name-label" for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <label id="email-label" for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <label id="number-label" for="number">Age:</label>
+      <input type="number" id="number" name="number" placeholder="Enter your age" min="18" max="100" required>
+      </fieldset>
+      <fieldset>
+      <label for="dropdown">Select your role:</label>
+      <select id="dropdown" name="role">
+        <option value="student">Student</option>
+        <option value="professional">Professional</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="roll-explanation">If you selected "other," please explain:</label>
+      <textarea id="role-explanation" name="role-explanation" row="4" placeholder="Describe your role"></textarea>
+      </fieldset>
+      <fieldset>
+      <p>Select your interests:</p>
+      <label>
+        <input type="checkbox" name="interest" value="html">HTML
+      </label>
+      <label>
+        <input type="checkbox" name="interest" value="css">CSS
+      </label>
+      <label>
+        <input type="checkbox" name="interest" value="javascript">JavaScript
+        </label>
+        <label for="comments">Additional comments:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional feedback">
+        </textarea>
+        <p>Would you recomend us?</p>
+        <label for="yes"><input id="yes" type="radio" name="recommend" class="inline" value="yes" checked required> Yes</label>
+        <label for="no"><input id="no" type="radio" name="recommend" class="inline" value="no"> No</label> 
+        </fieldset>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>

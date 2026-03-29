@@ -1,0 +1,14 @@
+/*Root Variables*/
+:root {
+    --color-darkest: #0d0507;
+    --color-deep: #1a0b0f;
+    --color-red: #5c1414;
+    --color-orange: #ff4a0a;
+    --color-hot: #ff7a1a;
+    --color-core: #ffd24a;
+    --sky-top: var(--color-deep);
+    --sky-glow: var(--color-orange);
+    --lava-main: var(--color-hot);
+    --lava-core: var(--color-core);
+    --tower: var(--color-darkest);
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        <h1>Technical Documentation for HTML and CSS</h1>
+      </header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+        <a class="nav-link" href="#CSS_Fundamentals">CSS Fundamentals</a>
+        <a class="nav-link" href="#Layout_and_Responsiveness">Layout and Responsiveness</a>
+        <a class="nav-link" href="#Example_and_Conclusion">Example and Conclusion</a>
+    </nav>
+    <main id="main-doc">
+      <!-- Section1: introduction-->
+      <section class="main-section" id="Introduction">
+        <header>
+          <h2>Introduction</h2>
+        </header>
+        <p>HTML and CSS are the backbone of web development.</p>
+        <p> HTML(HyperText Markup Language) creates the structure and organises content.</p>
+        <p>CSS (Cascading Style Sheets) equips you with the tools to design, layout and add visual flair.</p>
+        <p>Together they enable the creation of accessible, interactive and visually engaging websites.</p>
+        <code>&lt;!DOCTYPE html&gt;</code>
+      </section>
+      <!-- Section2: html basics-->
+      <section class="main-section" id="HTML_Basics">
+        <header>
+          <h2>HTML Basics</h2>
+        </header>
+        <p>HTML is used to build a webpage's structure. Key concepts include:</p>
+        <ul>
+          <li>
+            <span class="description">Document Structure:</span> Every HTML document starts with a <code>&lt;!DOCTYPE html&gt;</code>declaration, followed by <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.
+          </li>
+          <li>
+            <span class="description">Elements and Tags:</span> Use tags like <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> for headings, <code>&lt;p&gt;</code> for paragraphs, <code>&lt;a&gt;</code> for links, <code>&lt;img&gt;</code> for images, and <code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> with <code>&lt;li&gt;</code> for lists.
+          </li>
+          <li>
+            <span class="description">Semantic HTML:</span> Adding appropriate tags (like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>) helps outline the meaning and enhance accessibility, aiding search engines and users alike.
+          </li>
+        </ul>
+      </section>
+      <!-- Section3: css fundamentals-->
+      <section class="main-section" id="CSS_Fundamentals">
+        <header>
+          <h2>CSS Fundamentals</h2>
+        </header>
+        <p>CSS adds style and layout to your HTML structure through:</p>
+        <ul>
+          <li>
+            <span class="description">Selectors and Properties:</span> CSS rules are applied to HTML elements using selectors (like element, class, or ID selectors) and apply properties such as <code>color</code>, <code>font-size</code>, and <code>margin</code>. For example:<code>body { color: #2e2e3f; font-size: 14px; margin: 0 auto; }</code>
+          </li>
+            <li><span class="description">The Box Model:</span> Every element is treated as a box composed of its content, padding, border, and margin.
+          </li>
+          <li><span class="description">Stylesheet and Specificity:</span> External stylesheets keep content (HTML) and design (CSS) separate and manageable.
+          </li>
+        </ul>
+      </section>
+      <!-- section4: layout and responsiveness-->
+      <section class="main-section" id="Layout_and_Responsiveness">
+        <header>
+          <h2>Layout and Responsiveness</h2>
+        </header>
+        <p>Modern web design requires flexible layout techniques and reponsiveness:
+        </p>
+        <p>Below are key concepts to achieve this:</p>
+        <ul>
+          <li>
+            <span class="description">Layout Techniques:</span>
+            <ul>
+              <li>
+                <span class="description">Flexbox</span> Using <code>display: flex;</code> aligns and distributes space among items in a container.
+              </li>
+              <li>
+                <span class="description">Grid:</span> Using <code>display: grid;</code> creates a two-dimensional layout system suitable for complex designs.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <span class="description">Responsivness:</span>
+            <ul>
+              <li>
+                <span class="description">Media Queries:</span> (<code>@media</code>) allows CSS rules to adapt based on the viewport's dimensions, ensuring a great user experience on devices both large and small.
+              </li>
+              <li>
+                <span class="description">Relative Units</span> (like em, rem, %, vh, and vw) help in creating designs that scale fluidly across different screen sizes.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!--Section5: Example and conclusion-->
+      <section class="main-section" id="Example_and_Conclusion">
+        <header>
+          <h2>Example and Conclusion</h2>
+        </header>
+          <p>
+            <span class="description">HTML Example:</span>
+          </p>
+          <p>
+            Below is a simple HTML and CSS example that demonstrates key concepts.
+          </p>
+          <pre><code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+              &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Example Page&lt;/title&gt;
+                &lt;link rel="stylesheet" href="styles.css"&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;header&gt;
+                  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                &lt;/header&gt;
+                &lt;main&gt;
+                  &lt;p&gt;This is an example of a page using HTML.&lt;/p&gt;
+                &lt;/main&gt;
+                &lt;footer&gt;
+                  &lt;p&gt;Footer content here.&lt;/p&gt;
+                &lt;/footer&gt;
+              &lt;/body&gt;
+            &lt;/html&gt;
+          </code></pre>
+          <p>
+            <span class="description">CSS Example:</span>
+          </p>
+          <pre><code>
+            /* styles.css example */
+            body {
+              font-family: Ariel, sans-serif;
+              background-color: #fafafa;
+              margin: 0;
+              padding: 0;
+            }
+
+            header{
+              background: #333;
+              color: #fff;
+              padding: 1em;
+            }
+          </code></pre>
+          <p>
+            <span class="description">Conclusion:</span>
+          </p>
+          <p>
+            Mastering HTML and CSS is essential for creating functional and attractive web experiences. HTML lays the foundation by providing structure and sematic meaning, while CSS brings the design to life with effective styling and layout techniques. By exploring topics like semantic HTML, the box model, flexible layouts (with Flexbox and Grid), and responsive design practices you will develop the skills needed to build professional, accessible websites that look great on any device.
+          </p>
+      </section>
+    </main>
+  </body>
+</html>
