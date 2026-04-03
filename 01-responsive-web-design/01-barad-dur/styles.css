@@ -41,22 +41,26 @@ body, html {
     right: 80px;
     width: 400px;
     height: 400px;
-}
-.md-middle {
-    width: 350px;
-    height: 50px;
     background: var(--color-darkest);
-    position: absolute;
-    bottom: 50px;
-    clip-path: polygon(25% 0%, 50% 0%, 50% 100%, 50% 100%);
+    clip-path: polygon(0% 100%, 20% 85%, 25% 75%, 27% 77%, 40% 54%, 45% 56%, 50% 57%, 55% 56%, 60% 54%, 75% 80%, 76% 77%, 83% 85%, 85% 83%, 100% 100%)
 }
-.md-base {
+
+/*Lava*/
+.lava-stream1 {
+    position: absolute;
+    top: -5px;
+    background-color: var(--lava-main);
+    clip-path: polygon(44% 57%, 43% 64%, 40% 66%, 33% 73%, 36% 68%, 41% 62%, 43% 56%);
     width: 400px;
-    height: 50px;
-    background: var(--color-darkest);
+    height: 400px;
+}
+.lava-stream2 {
     position: absolute;
-    bottom: 0;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+    top: -5px;
+    background-color: var(--lava-main);
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(48% 62%, 47% 65%, 45% 68%, 43% 83%, 44% 80%, 43% 76%, 39% 82%, 44% 75%, 42% 76%, 46% 65%)
 }
 
 .ground {
