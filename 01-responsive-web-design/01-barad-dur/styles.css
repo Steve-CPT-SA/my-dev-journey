@@ -60,9 +60,147 @@ body, html {
     background-color: var(--lava-main);
     width: 400px;
     height: 400px;
-    clip-path: polygon(48% 62%, 47% 65%, 45% 68%, 43% 83%, 44% 80%, 43% 76%, 39% 82%, 44% 75%, 42% 76%, 46% 65%)
+    clip-path: polygon(50% 57%, 48% 63%, 46% 65%, 44% 75%, 42% 80%, 41% 83%, 44% 93%, 41% 90%, 39% 85%, 35% 87%, 36% 83%, 40% 78%, 43% 74%, 44% 70%, 42.5% 65%, 44% 57%)
+}
+.lava-stream3 {
+    position: absolute;
+    top: -5px;
+    background-color: var(--lava-main);
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(53% 58%, 52% 62%, 55% 68%, 56% 75%, 58% 80%, 62% 85%, 66% 86%, 70% 93%, 71% 96%, 68% 95%, 64% 89%, 62% 88%, 61% 91%, 62% 95%, 59% 91%, 57% 85%, 54% 81%, 52% 88%, 51% 91%, 50% 87%, 53% 75%, 52% 71%, 43% 58%);
+}
+.lava-stream4 {
+    position: absolute;
+    top:-5px;
+    background-color: var(--lava-main);
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(57% 56%, 58% 60%, 60% 63%, 61% 65%, 61% 67%, 63% 70%, 67% 74%, 63% 72%, 60% 70%, 59% 66%, 57% 63%, 56% 60%, 52% 58%);
 }
 
+/*Fire*/
+.fire {
+    width: 61.5px;
+    bottom: 318px;
+    right: 249.25px;
+    position: absolute;
+    height: 100px;
+}
+.flame-inner{
+    z-index: 6;
+    left: 0;
+    bottom: 4px;
+    width: 61.5px;
+    height: 100px;
+    position: absolute;
+    background-color: var(--color-core);
+    clip-path: polygon(30% 100%, 25% 95%, 24% 90%, 23% 80%, 25% 75%, 27% 80%, 30% 85%, 35% 90%, 34% 84%, 32% 76%, 31% 65%, 36% 74%, 41% 74%, 45% 65%, 47% 55%, 49% 49%, 51% 55%, 53% 64%, 53% 59%, 60% 65%, 61% 75%, 60% 85%, 65% 80%, 70% 75%, 73% 70%, 74% 66%, 75% 70%, 76% 75%, 74% 81%, 72% 90%, 70% 100%);
+}
+.flame-outer {
+    z-index: 5;
+    left: 0;
+    bottom: 4px;
+    width: 61.5px;
+    height: 100px;
+    position: absolute;
+    background-color: var(--color-hot);
+    clip-path: polygon(20% 100%, 18% 95%, 17% 90%, 18% 80%, 20% 73%, 24% 66%, 26% 68%, 25% 62%, 22% 55%, 19% 48%, 25% 51%, 30% 55%, 38% 64%, 40% 55%, 44% 45%, 49% 35%, 54% 31%, 54% 40%, 55% 50%, 56% 54%, 57% 50%, 60% 43%, 66% 36%, 64% 45%, 65% 55%, 66% 60%, 67% 66%, 70% 60%, 73% 53%, 75% 60%, 78% 65%, 80% 70%, 80% 80%, 79% 86%, 84% 80%, 85% 90%, 83% 96%, 80% 100%);
+}
+
+/*tephra*/
+.tephra1 {
+    position: absolute;
+    z-index: 5;
+    width: 100px;
+    height: 100px;
+    bottom: 380px;
+    right: 240px;
+    background-color: var(--color-hot);
+    clip-path: polygon(50% 100%, 45% 90%, 42% 80%, 43% 75%, 44% 70%, 46% 66%, 50% 68%, 52% 72%, 51% 76%, 50% 80%, 49% 85%, 50% 90%, 49.5% 98%, 50% 100%);
+}
+.tephra2 {
+    position: absolute;
+    z-index: 5;
+    background-color: var(--color-hot);
+    clip-path: polygon(50% 100%, 51% 95%, 55% 90%, 60% 85%, 65% 80%, 70% 75%, 75% 74%, 80% 75%, 84% 76%, 85% 80%, 83% 84%, 80% 86%, 75% 89%, 70% 90%, 65% 92%, 60% 94%, 55% 95%, 50% 100%);
+    width: 50px;
+    height: 50px;
+    bottom: 380px;
+    right: 240px;
+}
+.tephra3 {
+    position: absolute;
+    z-index: 5;
+    background-color: var(--color-hot);
+    clip-path: polygon(50% 100%, 51% 95%, 55% 90%, 60% 85%, 65% 80%, 70% 75%, 75% 74%, 80% 75%, 84% 76%, 85% 80%, 83% 84%, 80% 86%, 75% 89%, 70% 90%, 65% 92%, 60% 94%, 55% 95%, 50% 100%);
+    width: 80px;
+    height: 80px;
+    bottom: 399px;
+    right: 240px;
+}
+.tephra4 {
+    position: absolute;
+    z-index: 5;
+    background-color: var(--color-hot);
+    clip-path: polygon(50% 100%, 51% 95%, 55% 90%, 60% 85%, 65% 80%, 70% 75%, 75% 74%, 80% 75%, 84% 76%, 85% 80%, 83% 84%, 80% 86%, 75% 89%, 70% 90%, 65% 92%, 60% 94%, 55% 95%, 50% 100%);
+    width: 40px;
+    height: 40px;
+    bottom: 360px;
+    right: 240px;
+}
+
+/*smoke*/
+.smoke {
+    z-index: 4;
+    position: absolute;
+    width: 250px;
+    height: 240px;
+    bottom: 340px;
+    right: 80px;
+}
+.smoke-plume1 {
+    position: absolute;
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    width: 100px;
+    height: 57px;
+    top: 190px;
+    background-color: var(--color-deep);
+    transform: translate(0px, 0px);
+    opacity: 0.7;
+}
+.smoke-plume2 {
+    position: absolute;
+    background-color: var(--color-deep);
+    border-radius: 30% 70% 40% 60% / 60% 40% 70% 50%;
+    width: 180px;
+    height: 80px;
+    top: 180px;
+    transform: translate(30px, -20px);
+    opacity: 0.55;
+}
+.smoke-plume3 {
+    position: absolute;
+    background-color: var(--color-deep);
+    border-radius: 50% 50% 30% 70% / 70% 50% 60% 40%;
+    width: 200px;
+    height: 90px;
+    top: 200px;
+    transform: translate(-15px, -40px);
+    opacity: 0.45;
+}
+.smoke-plume4 {
+    position: absolute;
+    background-color: var(--color-deep);
+    border-radius: 40% 60% 55% 45% / 65% 35% 60% 50%;
+    width: 300px;
+    height: 120px;
+    top: 180px;
+    transform: translate(10px, -60px);
+    opacity: 0.35;
+}
+
+/*ground*/
 .ground {
     width: 100%;
     height: 150px;
