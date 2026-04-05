@@ -150,7 +150,7 @@ body, html {
     right: 240px;
 }
 
-/*smoke*/
+/*Smoke*/
 .smoke {
     z-index: 4;
     position: absolute;
@@ -158,46 +158,61 @@ body, html {
     height: 240px;
     bottom: 340px;
     right: 80px;
+    opacity: 0.6;
 }
 .smoke-plume1 {
     position: absolute;
     border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-    width: 100px;
+    width: 110px;
     height: 57px;
     top: 190px;
     background-color: var(--color-deep);
-    transform: translate(0px, 0px);
-    opacity: 0.7;
 }
 .smoke-plume2 {
     position: absolute;
     background-color: var(--color-deep);
     border-radius: 30% 70% 40% 60% / 60% 40% 70% 50%;
-    width: 180px;
-    height: 80px;
-    top: 180px;
-    transform: translate(30px, -20px);
-    opacity: 0.55;
+    width: 140px;
+    height: 60px;
+    top: 160px;
+    right: 100px;
 }
 .smoke-plume3 {
     position: absolute;
     background-color: var(--color-deep);
     border-radius: 50% 50% 30% 70% / 70% 50% 60% 40%;
-    width: 200px;
-    height: 90px;
-    top: 200px;
-    transform: translate(-15px, -40px);
-    opacity: 0.45;
+    width: 170px;
+    height: 60px;
+    top: 130px;
+    right: 60px;
+    
 }
 .smoke-plume4 {
     position: absolute;
     background-color: var(--color-deep);
     border-radius: 40% 60% 55% 45% / 65% 35% 60% 50%;
-    width: 300px;
-    height: 120px;
-    top: 180px;
-    transform: translate(10px, -60px);
-    opacity: 0.35;
+    width: 190px;
+    height: 60px;
+    top: 110px;
+    right: 10px;
+}
+.smoke-plume5 {
+    position: absolute;
+    background-color: var(--color-deep);
+    border-radius: 35% 65% 45% 55% / 55% 45% 65% 35%;
+    width: 90px;
+    height: 80px;
+    top: 90px;
+    right: 80px;
+}
+.smoke-plume6 {
+    position: absolute;
+    background-color: var(--color-deep);
+    border-radius: 60% 40% 50% 50% / 40% 70% 55% 45%;
+    width: 90px;
+    height: 49px;
+    top: 80px;
+    right: 30px;
 }
 
 /*ground*/
