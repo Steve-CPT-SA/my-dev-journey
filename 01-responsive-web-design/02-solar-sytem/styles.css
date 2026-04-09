@@ -1,0 +1,85 @@
+/* Root variables */
+:root {
+    /*base colors*/
+    --color-darkest: #050510;
+    --color-space: #0a0a1a;
+    --color-light: #f5f5f5;
+
+    /*Sun colors*/
+    --color-sun-core: #fff4a3;
+    --color-sun-mid: #ffae00;
+    --color-sun-edge: #ff6a00;
+
+    /*Planet base colors*/
+    --color-gray-light: #b1b1b1;
+    --color-gray-mid: #7a7a7a;
+    --color-gray-dark: #5c5c5c;
+
+    --color-sand-light: #e6c27a;
+    --color-sand-mid: #d4a75d;
+    --color-sand-dark: #b8893f;
+
+    --color-earth-blue: #2e6cff;
+    --color-earth-deep: #1b3fa0;
+    --color-earth-dark: #0f2a66;
+    --color-earth-green: #3fa34d;
+
+    --color-mars-light: #e27b58;
+    --color-mars-mid: #b44b2a;
+    --color-mars-dark: #7a2d1b;
+
+    --color-jupiter-light: #d9b38c;
+    --color-jupiter-mid: #c49a6c;
+    --color-jupiter-dark: #a67c52;
+
+    --color-saturn-light: #e8d3a9;
+    --color-saturn-mid: #cbb384;
+    --color-saturn-dark: #a68c5b;
+
+    --color-ice-light: #bde0e0;
+    --color-ice-mid: #87c9c9;
+
+    --color-neptune-light: #2b4fff;
+    --color-neptune-dark: #1b2f99;
+
+    --color-pluto-light: #cfcfcf;
+    --color-pluto-dark: #9e9e9e;
+
+    /*Sun*/
+    --sun-color: radial-gradient(circle, var(--color-sun-core), var(--color-sun-mid), var(--color-sun-edge));
+
+    /*Planets*/
+     --mercury-color: linear-gradient(45deg, var(--color-gray-mid), var(--color-gray-light), var(--color-gray-dark));
+
+    --venus-color: linear-gradient(45deg, var(--color-sand-light), var(--color-sand-mid), var(--color-sand-dark));
+
+    --earth-color: radial-gradient(circle at 30% 30%, var(--color-earth-blue), var(--color-earth-deep) 60%, var(--color-earth-dark)), radial-gradient(circle at 70% 60%, var(--color-earth-green) 20%, transparent 25%);
+
+    --mars-color: linear-gradient(45deg, var(--color-mars-mid), var(--color-mars-light), var(--color-mars-dark));
+
+    --jupiter-color: repeating-linear-gradient(0deg, var(--color-jupiter-light) 0%, var(--color-jupiter-mid) 10%, var(--color-jupiter-dark) 20%);
+
+    --saturn-color: linear-gradient(45deg, var(--color-saturn-light), var(--color-saturn-mid), var(--color-saturn-dark));
+
+    --uranus-color: linear-gradient(45deg, var(--color-ice-light), var(--color-ice-mid));
+
+    --neptune-color: linear-gradient(45deg, var(--color-neptune-light), var(--color-neptune-dark));
+
+    --pluto-color: linear-gradient(45deg, var(--color-pluto-light), var(--color-pluto-dark));
+}
+
+/* Global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Scene */
+.scene {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right, var(--color-darkest), var(--color-space));
+}
