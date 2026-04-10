@@ -90,12 +90,13 @@ body, html {
     top: 50%;
     left: 0;
     transform: translate(-85%, -50%);
-    width: 50vw;
+    width: 140vh;
     height: 140vh;
     background: var(--sun-color);
     border-radius: 50%;
     box-shadow: 0 0 100px var(--color-sun-edge);
     cursor: pointer;
+    z-index: 9;
 }
 .sun::after {
     content: attr(data-name);
@@ -119,3 +120,58 @@ body, html {
     opacity: 1;
 }
 
+/* Mercury */
+.mercury-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    
+}
+.mercury-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140vh;
+    height: 140vh;
+    border: 2px dashed var(--color-gray-light);
+    border-radius: 50%;
+    transform: translate(-80%,-50%);
+}
+
+.mercury {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(50deg) translateX(19vw);
+    width: 1.5vw;
+    height: 1.5vw;
+    background: var(--mercury-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-gray-light);
+    cursor: pointer;
+    z-index: 8;
+}
+.mercury::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.mercury:hover::after {
+    opacity: 1;
+}
