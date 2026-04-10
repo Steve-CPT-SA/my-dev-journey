@@ -85,3 +85,37 @@ body, html {
 }
 
 /* Sun */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-85%, -50%);
+    width: 50vw;
+    height: 140vh;
+    background: var(--sun-color);
+    border-radius: 50%;
+    box-shadow: 0 0 100px var(--color-sun-edge);
+    cursor: pointer;
+}
+.sun::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.sun:hover::after {
+    opacity: 1;
+}
+
