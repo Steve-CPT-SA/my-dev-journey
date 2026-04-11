@@ -84,6 +84,11 @@
     inherits: false;
     initial-value: 0deg;
 }
+@property --mars-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
 
 /* @keyframes */
 @keyframes mercury-orbit {
@@ -110,7 +115,14 @@
         --earth-orbit: 360deg;
     }
 }
-
+@keyframes mars-orbit {
+    from {
+        --mars-orbit: 0deg;
+    }
+     to {
+        --mars-orbit: 360deg;
+    }
+}
 
 /* Global styles */
 body, html {
@@ -336,5 +348,63 @@ body, html {
     pointer-events: none;
 }
 .earth:hover::after {
+    opacity: 1;
+}
+
+/* Mars */
+.mars-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--mars-orbit));
+    animation: mars-orbit 80s linear infinite;
+}
+.mars-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 185vh;
+    height: 185vh;
+    border: 2px dashed var(--color-mars-mid);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.mars {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(91vh);
+    width: 2vw;
+    height: 2vw;
+    background: var(--mars-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-mars-mid);
+    cursor: pointer;
+    z-index: 5;
+}
+.mars::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.mars:hover::after {
     opacity: 1;
 }
