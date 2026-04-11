@@ -53,7 +53,7 @@
 
     --venus-color: linear-gradient(45deg, var(--color-sand-light), var(--color-sand-mid), var(--color-sand-dark));
 
-    --earth-color: radial-gradient(circle at 30% 30%, var(--color-earth-blue), var(--color-earth-deep) 60%, var(--color-earth-dark)), radial-gradient(circle at 70% 60%, var(--color-earth-green) 20%, transparent 25%);
+   --earth-color: linear-gradient( 45deg, var(--color-earth-green) 0%, var(--color-earth-green) 25%, var(--color-earth-blue) 35%, var(--color-earth-green) 45%, var(--color-earth-deep) 70%, var(--color-earth-dark) 100% );
 
     --mars-color: linear-gradient(45deg, var(--color-mars-mid), var(--color-mars-light), var(--color-mars-dark));
 
@@ -79,6 +79,11 @@
     inherits: false;
     initial-value: 0deg;
 }
+@property --earth-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
 
 /* @keyframes */
 @keyframes mercury-orbit {
@@ -95,6 +100,14 @@
     }
      to {
         --venus-orbit: 360deg;
+    }
+}
+@keyframes earth-orbit {
+    from {
+        --earth-orbit: 0deg;
+    }
+     to {
+        --earth-orbit: 360deg;
     }
 }
 
@@ -265,5 +278,63 @@ body, html {
     pointer-events: none;
 }
 .venus:hover::after {
+    opacity: 1;
+}
+
+/* Earth */
+.earth-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--earth-orbit));
+    animation: earth-orbit 60s linear infinite;
+}
+.earth-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160vh;
+    height: 160vh;
+    border: 2px dashed var(--color-earth-blue);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.earth {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(78vh);
+    width: 2.5vw;
+    height: 2.5vw;
+    background: var(--earth-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-earth-blue);
+    cursor: pointer;
+    z-index: 6;
+}
+.earth::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.earth:hover::after {
     opacity: 1;
 }
