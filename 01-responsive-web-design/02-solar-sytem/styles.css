@@ -171,13 +171,15 @@ body, html {
     border: 2px dashed var(--color-gray-light);
     border-radius: 50%;
     transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .mercury {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(53vh);
+    transform: translate(53.5vh);
     width: 1.5vw;
     height: 1.5vw;
     background: var(--mercury-color);
@@ -205,5 +207,63 @@ body, html {
     pointer-events: none;
 }
 .mercury:hover::after {
+    opacity: 1;
+}
+
+/* Venus */
+.venus-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--venus-orbit));
+    animation: venus-orbit 40s linear infinite;
+}
+.venus-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 135vh;
+    height: 135vh;
+    border: 2px dashed var(--color-sand-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.venus {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(65.6vh);
+    width: 2vw;
+    height: 2vw;
+    background: var(--venus-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-sand-light);
+    cursor: pointer;
+    z-index: 7;
+}
+.venus::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.venus:hover::after {
     opacity: 1;
 }
