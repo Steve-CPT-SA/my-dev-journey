@@ -40,6 +40,7 @@
 
     --color-ice-light: #bde0e0;
     --color-ice-mid: #87c9c9;
+    --color-uranus-ring: #a0d1d1;
 
     --color-neptune-light: #2b4fff;
     --color-neptune-dark: #1b2f99;
@@ -51,11 +52,11 @@
     --sun-color: radial-gradient(circle, var(--color-sun-core), var(--color-sun-mid), var(--color-sun-edge));
 
     /*Planets*/
-     --mercury-color: linear-gradient(45deg, var(--color-gray-mid), var(--color-gray-light), var(--color-gray-dark));
+    --mercury-color: linear-gradient(45deg, var(--color-gray-mid), var(--color-gray-light), var(--color-gray-dark));
 
     --venus-color: linear-gradient(45deg, var(--color-sand-light), var(--color-sand-mid), var(--color-sand-dark));
 
-   --earth-color: linear-gradient( 45deg, var(--color-earth-green) 0%, var(--color-earth-green) 25%, var(--color-earth-blue) 35%, var(--color-earth-green) 45%, var(--color-earth-deep) 70%, var(--color-earth-dark) 100% );
+    --earth-color: linear-gradient( 45deg, var(--color-earth-green) 0%, var(--color-earth-green) 25%, var(--color-earth-blue) 35%, var(--color-earth-green) 45%, var(--color-earth-deep) 70%, var(--color-earth-dark) 100% );
 
     --mars-color: linear-gradient(45deg, var(--color-mars-mid), var(--color-mars-light), var(--color-mars-dark));
 
@@ -649,5 +650,74 @@ body, html {
     pointer-events: none;
 }
 .saturn:hover::after {
+    opacity: 1;
+}
+
+/* Uranus */
+.uranus-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--uranus-orbit));
+    animation: uranus-orbit 140s linear infinite;
+}
+.uranus-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 285vh;
+    height: 285vh;
+    border: 2px dashed var(--color-ice-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.uranus {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(140vh);
+    width: 3vw;
+    height: 3vw;
+    background: var(--uranus-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-uranus-light);
+    cursor: pointer;
+    z-index: 2;
+}
+.uranus .uranus-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7vw;
+    height: 0.3vw;
+    background: var(--color-uranus-ring);
+    border-radius: 50% / 25%;
+    transform: translate(-50%, -50%) rotate(86deg);
+    box-shadow: 0 0 3px var(--color-uranus-mid);
+}
+.uranus::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.uranus:hover::after {
     opacity: 1;
 }
