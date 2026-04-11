@@ -69,6 +69,17 @@
     --neptune-color: linear-gradient(45deg, var(--color-neptune-light), var(--color-neptune-dark));
 
     --pluto-color: linear-gradient(45deg, var(--color-pluto-light), var(--color-pluto-dark));
+
+    /* Planet Orbits */
+    --mercury-orbit-speed: 50s;
+    --venus-orbit-speed: 50s;
+    --earth-orbit-speed: 50s;
+    --mars-orbit-speed: 50s;
+    --jupiter-orbit-speed: 40s;
+    --saturn-orbit-speed: 40s;
+    --uranus-orbit-speed: 40s;
+    --neptune-orbit-speed: 40s;
+    --pluto-orbit-speed: 40s;
 }
 
 /* @properties */
@@ -291,7 +302,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--mercury-orbit));
-    animation: mercury-orbit 20s linear infinite;
+    animation: mercury-orbit var(--mercury-orbit-speed) linear infinite;
 }
 .mercury-orbit::before {
     content: '';
@@ -350,7 +361,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--venus-orbit));
-    animation: venus-orbit 40s linear infinite;
+    animation: venus-orbit var(--venus-orbit-speed) linear infinite;
 }
 .venus-orbit::before {
     content: '';
@@ -408,7 +419,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--earth-orbit));
-    animation: earth-orbit 60s linear infinite;
+    animation: earth-orbit var(--earth-orbit-speed) linear infinite;
 }
 .earth-orbit::before {
     content: '';
@@ -466,7 +477,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--mars-orbit));
-    animation: mars-orbit 80s linear infinite;
+    animation: mars-orbit var(--mars-orbit-speed) linear infinite;
 }
 .mars-orbit::before {
     content: '';
@@ -524,7 +535,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--jupiter-orbit));
-    animation: jupiter-orbit 100s linear infinite;
+    animation: jupiter-orbit var(--jupiter-orbit-speed) linear infinite;
 }
 .jupiter-orbit::before {
     content: '';
@@ -592,7 +603,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--saturn-orbit));
-    animation: saturn-orbit 120s linear infinite;
+    animation: saturn-orbit var(--saturn-orbit-speed) linear infinite;
 }
 .saturn-orbit::before {
     content: '';
@@ -661,7 +672,7 @@ body, html {
     top: 50%;
     left: 0;
     transform: rotate(var(--uranus-orbit));
-    animation: uranus-orbit 140s linear infinite;
+    animation: uranus-orbit var(--uranus-orbit-speed) linear infinite;
 }
 .uranus-orbit::before {
     content: '';
@@ -719,5 +730,121 @@ body, html {
     pointer-events: none;
 }
 .uranus:hover::after {
+    opacity: 1;
+}
+
+/* Neptune */
+.neptune-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--neptune-orbit));
+    animation: neptune-orbit var(--neptune-orbit-speed) linear infinite;
+}
+.neptune-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 315vh;
+    height: 315vh;
+    border: 2px dashed var(--color-neptune-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.neptune {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(155vh);
+    width: 2.5vw;
+    height: 2.5vw;
+    background: var(--neptune-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-neptune-light);
+    cursor: pointer;
+    z-index: 1;
+}
+.neptune::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.neptune:hover::after {
+    opacity: 1;
+}
+
+/* Pluto */
+.pluto-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--pluto-orbit));
+    animation: pluto-orbit var(--pluto-orbit-speed) linear infinite;
+}
+.pluto-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 343vh;
+    height: 343vh;
+    border: 2px dashed var(--color-pluto-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.pluto {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(170vh);
+    width: 1.5vw;
+    height: 1.5vw;
+    background: var(--pluto-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-pluto-light);
+    cursor: pointer;
+    z-index: 0;
+}
+.pluto::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.pluto:hover::after {
     opacity: 1;
 }
