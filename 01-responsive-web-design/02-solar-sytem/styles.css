@@ -71,15 +71,15 @@
     --pluto-color: linear-gradient(45deg, var(--color-pluto-light), var(--color-pluto-dark));
 
     /* Planet Orbits */
-    --mercury-orbit-speed: 50s;
+    --mercury-orbit-speed: 40s;
     --venus-orbit-speed: 50s;
-    --earth-orbit-speed: 50s;
-    --mars-orbit-speed: 50s;
-    --jupiter-orbit-speed: 40s;
-    --saturn-orbit-speed: 40s;
-    --uranus-orbit-speed: 40s;
-    --neptune-orbit-speed: 40s;
-    --pluto-orbit-speed: 40s;
+    --earth-orbit-speed: 66s;
+    --mars-orbit-speed: 76s;
+    --jupiter-orbit-speed: 80s;
+    --saturn-orbit-speed: 90s;
+    --uranus-orbit-speed: 100s;
+    --neptune-orbit-speed: 140s;
+    --pluto-orbit-speed: 150s;
 }
 
 /* @properties */
@@ -203,7 +203,14 @@
         --pluto-orbit: 360deg;
     }
 }
-
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
 /* Global styles */
 body, html {
     margin: 0;
@@ -254,6 +261,138 @@ body, html {
 }
 .sun:hover::after {
     opacity: 1;
+}
+
+/* Stars */
+.star1 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--color-light);
+    animation: twinkle 1s ease-in-out infinite alternate;
+    right: 10%;
+    top: 20%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star2 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-light);
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+    right: 50%;
+    top: 30%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star3 {
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-light);
+    animation: twinkle 2s ease-in-out infinite alternate;
+    right: 20%;
+    top: 40%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star4 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 3px var(--color-light);
+    animation: twinkle 2.5s ease-in-out infinite alternate;
+    right: 25%;
+    top: 50%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star5 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--color-light);
+    animation: twinkle 1s ease-in-out infinite alternate;
+    right: 15%;
+    top: 60%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star6 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-light);
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+    right: 45%;
+    top: 70%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star7 {
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-light);
+    animation: twinkle 2s ease-in-out infinite alternate;
+    right: 35%;
+    top: 80%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star8 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 3px var(--color-light);
+    animation: twinkle 2.5s ease-in-out infinite alternate;
+    right: 30%;
+    top: 90%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star9 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--color-light);
+    animation: twinkle 1s ease-in-out infinite alternate;
+    right: 5%;
+    top: 80%;
+    pointer-events: none;
+    z-index: 10;
+}
+.star10 {
+    position: absolute;
+    width: 0.5vh;
+    height: 0.5vh;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-light);
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+    right: 40%;
+    top: 10%;
+    pointer-events: none;
+    z-index: 10;
 }
 
 /* Asteroid Belt */
