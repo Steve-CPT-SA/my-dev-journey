@@ -36,6 +36,7 @@
     --color-saturn-light: #e8d3a9;
     --color-saturn-mid: #cbb384;
     --color-saturn-dark: #a68c5b;
+    --color-saturn-ring: #e7d2bd;
 
     --color-ice-light: #bde0e0;
     --color-ice-mid: #87c9c9;
@@ -579,5 +580,74 @@ body, html {
     pointer-events: none;
 }
 .jupiter:hover::after {
+    opacity: 1;
+}
+
+/* Saturn */
+.saturn-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--saturn-orbit));
+    animation: saturn-orbit 120s linear infinite;
+}
+.saturn-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250vh;
+    height: 250vh;
+    border: 2px dashed var(--color-saturn-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.saturn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(122vh);
+    width: 3.5vw;
+    height: 3.5vw;
+    background: var(--saturn-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-saturn-light);
+    cursor: pointer;
+    z-index: 3;
+}
+.saturn .saturn-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9vw;
+    height: 0.5vw;
+    background: var(--color-saturn-ring);
+    border-radius: 50% / 25%;
+    transform: translate(-50%, -50%) rotate(25deg);
+    box-shadow: 0 0 3px var(--color-saturn-mid);
+}
+.saturn::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.saturn:hover::after {
     opacity: 1;
 }
