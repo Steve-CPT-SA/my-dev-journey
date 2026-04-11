@@ -68,6 +68,37 @@
     --pluto-color: linear-gradient(45deg, var(--color-pluto-light), var(--color-pluto-dark));
 }
 
+/* @properties */
+@property --mercury-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@property --venus-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* @keyframes */
+@keyframes mercury-orbit {
+    from {
+        --mercury-orbit: 0deg;
+    }
+     to {
+        --mercury-orbit: 360deg;
+    }
+}
+@keyframes venus-orbit {
+    from {
+        --venus-orbit: 0deg;
+    }
+     to {
+        --venus-orbit: 360deg;
+    }
+}
+
+
 /* Global styles */
 body, html {
     margin: 0;
@@ -89,9 +120,9 @@ body, html {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(-85%, -50%);
-    width: 140vh;
-    height: 140vh;
+    transform: translate(-50%, -50%);
+    width: 100vh;
+    height: 100vh;
     background: var(--sun-color);
     border-radius: 50%;
     box-shadow: 0 0 100px var(--color-sun-edge);
@@ -127,25 +158,26 @@ body, html {
     position: absolute;
     top: 50%;
     left: 0;
-    
+    transform: rotate(var(--mercury-orbit));
+    animation: mercury-orbit 20s linear infinite;
 }
 .mercury-orbit::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 140vh;
-    height: 140vh;
+    width: 110vh;
+    height: 110vh;
     border: 2px dashed var(--color-gray-light);
     border-radius: 50%;
-    transform: translate(-80%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 .mercury {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: rotate(50deg) translateX(19vw);
+    transform: translate(53vh);
     width: 1.5vw;
     height: 1.5vw;
     background: var(--mercury-color);
