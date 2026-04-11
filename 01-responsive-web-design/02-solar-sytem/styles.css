@@ -31,6 +31,7 @@
     --color-jupiter-light: #d9b38c;
     --color-jupiter-mid: #c49a6c;
     --color-jupiter-dark: #a67c52;
+    --color-jupiter-spot: #7a2d1b;
 
     --color-saturn-light: #e8d3a9;
     --color-saturn-mid: #cbb384;
@@ -89,6 +90,32 @@
     inherits: false;
     initial-value: 0deg;
 }
+@property --jupiter-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@property --saturn-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@property --uranus-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@property --neptune-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@property --pluto-orbit {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
 
 /* @keyframes */
 @keyframes mercury-orbit {
@@ -121,6 +148,46 @@
     }
      to {
         --mars-orbit: 360deg;
+    }
+}
+@keyframes jupiter-orbit {
+    from {
+        --jupiter-orbit: 0deg;
+    }
+     to {
+        --jupiter-orbit: 360deg;
+    }
+}
+@keyframes saturn-orbit {
+    from {
+        --saturn-orbit: 0deg;
+    }
+     to {
+        --saturn-orbit: 360deg;
+    }
+}
+@keyframes uranus-orbit {
+    from {
+        --uranus-orbit: 0deg;
+    }
+     to {
+        --uranus-orbit: 360deg;
+    }
+}
+@keyframes neptune-orbit {
+    from {
+        --neptune-orbit: 0deg;
+    }
+     to {
+        --neptune-orbit: 360deg;
+    }
+}
+@keyframes pluto-orbit {
+    from {
+        --pluto-orbit: 0deg;
+    }
+     to {
+        --pluto-orbit: 360deg;
     }
 }
 
@@ -174,6 +241,44 @@ body, html {
 }
 .sun:hover::after {
     opacity: 1;
+}
+
+/* Asteroid Belt */
+.asteroid-belt1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 197vh;
+    height: 197vh;
+    border: 15px dotted var(--color-sand-dark);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.asteroid-belt2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 198vh;
+    height: 198vh;
+    border: 10px dotted var(--color-sand-light);
+    border-radius: 50%;
+    opacity: 0.5;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(15deg)
+}
+.asteroid-belt3 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 197.5vh;
+    height: 197.5vh;
+    border: 20px dotted var(--color-saturn-mid);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 /* Mercury */
@@ -406,5 +511,73 @@ body, html {
     pointer-events: none;
 }
 .mars:hover::after {
+    opacity: 1;
+}
+
+/* Jupiter */
+.jupiter-orbit {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(var(--jupiter-orbit));
+    animation: jupiter-orbit 100s linear infinite;
+}
+.jupiter-orbit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 215.5vh;
+    height: 215.5vh;
+    border: 2px dashed var(--color-jupiter-light);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.jupiter {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(105vh);
+    width: 4vw;
+    height: 4vw;
+    background: var(--jupiter-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--color-jupiter-light);
+    cursor: pointer;
+    z-index: 4;
+}
+.jupiter .jupiter-eye {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 1vw;
+    height: 1vw;
+    background: var(--color-jupiter-spot);
+    border-radius: 50%;
+    box-shadow: 0 0 3px var(--color-gray-dark);
+}
+.jupiter::after {
+    content: attr(data-name);
+    position: relative;
+    color: var(--color-light);
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--color-darkest);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}
+.jupiter:hover::after {
     opacity: 1;
 }
