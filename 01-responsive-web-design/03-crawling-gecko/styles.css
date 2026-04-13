@@ -1,0 +1,46 @@
+/* Root Variables */
+:root {
+    --lime-green: #32cd32;
+    --forest-green: #228b22;
+    --emerald-green: #2ecc71;
+    --deep-black: #0a0a0a;
+    --charcoal-black: #1c1c1c;
+    --glossy-black: #2e2e2e;
+    --highlight-white: #ffffff;
+    --muted-white: #f5f5f5;
+    --neutral-gray: #808080;
+    --dark-gray: #4d4d44;
+    --light-grey: #dcdcdc;
+
+    --gecko-body: linear-gradient(to right, var(--forest-green) 0%, var(--forest-green) 40%, var(--lime-green) 48%, var(--emerald-green) 50%, var(--lime-green) 52%, var(--forest-green) 60%, var(--forest-green) 100%);
+
+    --gecko-eye: radial-gradient(circle at center, var(--deep-black) 40%, var(--charcoal-black) 70%, var(--glossy-black) 100%);
+}
+
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--muted-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gecko container */
+.gecko {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+/* Gecko body*/
+.gecko-body {
+    position: relative;
+    background: var(--gecko-body);
+    border-radius: 60% 60% 50% 50% / 60% 60% 50% 50%;
+    width: 10vw;
+    height: 30vw;
+}
