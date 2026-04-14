@@ -31,14 +31,16 @@ body, html {
 
 /* Gecko container */
 .gecko {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 50%;
+    height: 47vw;
+    width: 20vw;
 }
 
 /* Gecko body*/
 .gecko-body {
-    position: relative;
+    position: absolute;
     background: var(--gecko-body);
     border-radius: 55% 65% 45% 50% / 60% 70% 40% 45%;
     width: 6vw;
@@ -49,7 +51,7 @@ body, html {
 .gecko-tail {
     position: absolute;
     top: 90%;
-    left: 32.5%;
+    left: 33%;
     background: var(--gecko-body);
     border-radius: 5% 5% 60% 60% / 5% 5% 80% 80%;
     width: 2vw;
@@ -86,4 +88,14 @@ body, html {
     border-radius: 50%;
     width: 2vw;
     height: 2vw;
+}
+
+/* Gecko legs */
+.gecko-front-left-leg {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    background: var(--gecko-body);
+    width: 1.5vw;
+    height: 6vw;
 }
