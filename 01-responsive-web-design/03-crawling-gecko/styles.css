@@ -32,7 +32,7 @@ body, html {
 /* Gecko container */
 .gecko {
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 50%;
 }
 
@@ -41,18 +41,49 @@ body, html {
     position: relative;
     background: var(--gecko-body);
     border-radius: 55% 65% 45% 50% / 60% 70% 40% 45%;
-    width: 10vw;
-    height: 30vw;
+    width: 6vw;
+    height: 20vw;
 }
 
 /* Gecko tail */
 .gecko-tail {
     position: absolute;
     top: 90%;
-    left: 26%;
+    left: 32.5%;
     background: var(--gecko-body);
     border-radius: 5% 5% 60% 60% / 5% 5% 80% 80%;
-    width: 5vw;
+    width: 2vw;
     height: 18vw;
 
+}
+
+/* Gecko head */
+.gecko-head {
+    position: absolute;
+    top: -38%;
+    left: -17%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 8vw;
+    height: 8vw;
+}
+
+/* Gecko eyes */
+.left-eye {
+    position: absolute;
+    top: 30%;
+    left: 11%;
+    background: var(--gecko-eye);
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+}
+.right-eye {
+    position: absolute;
+    top: 30%;
+    left: 63%;
+    background: var(--gecko-eye);
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
 }
