@@ -35,7 +35,7 @@ body, html {
     top: 20%;
     left: 50%;
     height: 47vw;
-    width: 20vw;
+    width: 47vw;
 }
 
 /* Gecko body*/
@@ -45,16 +45,18 @@ body, html {
     border-radius: 55% 65% 45% 50% / 60% 70% 40% 45%;
     width: 6vw;
     height: 20vw;
+    top: 0;
+    left: 0;
 }
 
 /* Gecko tail */
 .gecko-tail {
     position: absolute;
-    top: 90%;
-    left: 33%;
+    bottom: 20%;
+    left: 3.5%;
     background: var(--gecko-body);
-    border-radius: 5% 5% 60% 60% / 5% 5% 80% 80%;
-    width: 2vw;
+    border-radius: 10% 10% 60% 60% / 5% 5% 80% 80%;
+    width: 2.6vw;
     height: 18vw;
 
 }
@@ -62,8 +64,8 @@ body, html {
 /* Gecko head */
 .gecko-head {
     position: absolute;
-    top: -38%;
-    left: -17%;
+    top: -15%;
+    left: -2.2%;
     background: var(--gecko-body);
     border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
     width: 8vw;
@@ -90,12 +92,38 @@ body, html {
     height: 2vw;
 }
 
-/* Gecko legs */
+/* Gecko left legs */
 .gecko-front-left-leg {
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: -8%;
+    left: -18%;
     background: var(--gecko-body);
-    width: 1.5vw;
-    height: 6vw;
+    width: 10vw;
+    height: 10vw;
+}
+.gecko-back-left-leg {
+    position: absolute;
+    top: 30%;
+    left: -18%;
+    background: var(--gecko-body);
+    width: 10vw;
+    height: 10vw;
+}
+
+/* Gecko right legs */
+.gecko-front-right-leg {
+    position: absolute;
+    top: -8%;
+    left: 8.7%;
+    background: var(--gecko-body);
+    width: 10vw;
+    height: 10vw;
+}
+.gecko-back-right-leg {
+    position: absolute;
+    top: 30%;
+    left: 9.5%;
+    background: var(--gecko-body);
+    width: 10vw;
+    height: 10vw;
 }
