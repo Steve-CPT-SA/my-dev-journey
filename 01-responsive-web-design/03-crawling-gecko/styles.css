@@ -97,7 +97,6 @@ body, html {
     position: absolute;
     top: -8%;
     left: -18%;
-    background: var(--gecko-body);
     width: 10vw;
     height: 10vw;
 }
@@ -109,6 +108,23 @@ body, html {
     width: 10vw;
     height: 10vw;
 }
+
+/* Gecko left upper arm */
+.front-left-upperarm {
+    position: absolute;
+    top: 95%;
+    left: 20%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 2vw;
+    height: 8vw;
+    transform-origin: top center;
+    transform: rotate(-120deg);
+}
+
+
+
+
 
 /* Gecko right legs */
 .gecko-front-right-leg {
