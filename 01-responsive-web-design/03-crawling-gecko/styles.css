@@ -136,7 +136,6 @@ body, html {
     position: absolute;
     top: -8%;
     left: 8.7%;
-    background: var(--gecko-body);
     width: 10vw;
     height: 10vw;
 }
@@ -144,7 +143,28 @@ body, html {
     position: absolute;
     top: 30%;
     left: 9.5%;
-    background: var(--gecko-body);
     width: 10vw;
     height: 10vw;
+}
+.front-right-upperarm {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 2vw;
+    height: 8vw;
+    transform-origin: left;
+    transform: rotate(120deg);
+}
+.back-right-upperarm {
+    position: absolute;
+    top: -30%;
+    left: 34%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 2vw;
+    height: 8vw;
+    transform-origin: left;
+    transform: rotate(60deg);
 }
