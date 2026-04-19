@@ -152,7 +152,6 @@ body, html {
     transform: rotate(-90deg);
 }
 
-
 /* Gecko right legs */
 .gecko-front-right-leg {
     position: absolute;
@@ -172,6 +171,17 @@ body, html {
     transform-origin: left;
     transform: rotate(120deg);
 }
+.front-right-forearm {
+    position: absolute;
+    top: -70%;
+    left: 20%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 1.5vw;
+    height: 6vw;
+    transform-origin: bottom center;
+    transform: rotate(-90deg);
+}
 .gecko-back-right-leg {
     position: absolute;
     top: 30%;
@@ -189,4 +199,15 @@ body, html {
     height: 8vw;
     transform-origin: left;
     transform: rotate(60deg);
+}
+.back-right-forearm {
+    position: absolute;
+    top: -70%;
+    left: 25%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 1.5vw;
+    height: 6vw;
+    transform-origin: bottom center;
+    transform: rotate(90deg);
 }
