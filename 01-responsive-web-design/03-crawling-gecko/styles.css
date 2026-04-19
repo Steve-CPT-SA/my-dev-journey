@@ -140,6 +140,17 @@ body, html {
     transform-origin: right;
     transform: rotate(-60deg);
 }
+.back-left-forearm {
+    position: absolute;
+    top: -70%;
+    left: 30%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 1.5vw;
+    height: 6vw;
+    transform-origin: bottom center;
+    transform: rotate(-90deg);
+}
 
 
 /* Gecko right legs */
