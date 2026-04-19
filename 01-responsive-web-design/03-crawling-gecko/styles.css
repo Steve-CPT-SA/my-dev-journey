@@ -100,13 +100,6 @@ body, html {
     width: 10vw;
     height: 10vw;
 }
-.gecko-back-left-leg {
-    position: absolute;
-    top: 30%;
-    left: -18%;
-    width: 10vw;
-    height: 10vw;
-}
 .front-left-upperarm {
     position: absolute;
     top: 30%;
@@ -117,6 +110,24 @@ body, html {
     height: 8vw;
     transform-origin: right;
     transform: rotate(-120deg);
+}
+.front-left-forearm {
+    position: absolute;
+    top: -70%;
+    left: 20%;
+    background: var(--gecko-body);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    width: 1.5vw;
+    height: 6vw;
+    transform-origin: bottom center;
+    transform: rotate(90deg);
+}
+.gecko-back-left-leg {
+    position: absolute;
+    top: 30%;
+    left: -18%;
+    width: 10vw;
+    height: 10vw;
 }
 .back-left-upperarm {
     position: absolute;
@@ -139,13 +150,6 @@ body, html {
     width: 10vw;
     height: 10vw;
 }
-.gecko-back-right-leg {
-    position: absolute;
-    top: 30%;
-    left: 9.5%;
-    width: 10vw;
-    height: 10vw;
-}
 .front-right-upperarm {
     position: absolute;
     top: 30%;
@@ -156,6 +160,13 @@ body, html {
     height: 8vw;
     transform-origin: left;
     transform: rotate(120deg);
+}
+.gecko-back-right-leg {
+    position: absolute;
+    top: 30%;
+    left: 9.5%;
+    width: 10vw;
+    height: 10vw;
 }
 .back-right-upperarm {
     position: absolute;
