@@ -225,3 +225,39 @@ body, html {
     transform: rotate(90deg);
     box-shadow: -3vw -0.5vw 0 0 var(--emerald-green), -2vw -1.5vw 0 0 var(--emerald-green), -0.75vw -2vw 0 0 var(--emerald-green), 0.75vw -2vw 0 0 var(--emerald-green), 2vw -1.5vw 0 0 var(--emerald-green);
 }
+.front-right-foot {
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    background: var(--gecko-body);
+    border-radius: 40%;
+    width: 1.5vw;
+    height: 1.5vw;
+    transform-origin: bottom center;
+    transform: rotate(-90deg);
+    box-shadow: 3vw -0.5vw 0 0 var(--emerald-green), 2vw -1.5vw 0 0 var(--emerald-green), 0.75vw -2vw 0 0 var(--emerald-green), -0.75vw -2vw 0 0 var(--emerald-green), -2vw -1.5vw 0 0 var(--emerald-green);
+}
+.back-left-foot {
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    background: var(--gecko-body);
+    border-radius: 40%;
+    width: 1.5vw;
+    height: 1.5vw;
+    transform-origin: bottom center;
+    transform: rotate(90deg);
+    box-shadow: -3vw -0.5vw 0 0 var(--emerald-green), -2vw -1.5vw 0 0 var(--emerald-green), -0.75vw -2vw 0 0 var(--emerald-green), 0.75vw -2vw 0 0 var(--emerald-green), 2vw -1.5vw 0 0 var(--emerald-green);
+}
+.back-right-foot {
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    background: var(--gecko-body);
+    border-radius: 40%;
+    width: 1.5vw;
+    height: 1.5vw;
+    transform-origin: bottom center;
+    transform: rotate(-90deg);
+    box-shadow: 3vw -0.5vw 0 0 var(--emerald-green), 2vw -1.5vw 0 0 var(--emerald-green), 0.75vw -2vw 0 0 var(--emerald-green), -0.75vw -2vw 0 0 var(--emerald-green), -2vw -1.5vw 0 0 var(--emerald-green);
+}
