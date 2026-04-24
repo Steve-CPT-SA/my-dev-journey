@@ -215,14 +215,14 @@ body, html {
 /* Gecko feet */
 .front-left-foot {
     position: absolute;
-    top: -80%;
-    left: 10%;
+    top: 0;
+    left: 0;
     background: var(--gecko-body);
     border-radius: 60% 60% 50% 50%;
     width: 1.4vw;
     height: 1.4vw;
     transform-origin: bottom center;
-    transform: rotate(90deg);
+    transform: rotate(20deg);
     box-shadow: -3vw 0vw 0 0 var(--lime-green), 
                 -2.1vw -2.1vw 0 0 var(--lime-green), 
                 0vw -3vw 0 0 var(--lime-green), 
@@ -235,17 +235,47 @@ body, html {
                 2.1vw -2.1vw 0 0.2vw var(--forest-green),
                 3vw -0.1vw 0 0.2vw var(--forest-green);
 }
+.front-left-foot::before {
+    content: '';
+    position: absolute;
+    top: 0.3vw;
+    left: 0.3vw;
+    background: var(--gecko-body);
+    border-radius: 40% 40% 50% 50%;
+    width: 1vw;
+    height: 1vw;
+    box-shadow: -1.9vw 0vw 0 0 var(--forest-green), 
+                -1.2vw -1.4vw 0 0 var(--forest-green), 
+                0vw -1.8vw 0 0 var(--forest-green), 
+                1vw -1.3vw 0 0 var(--forest-green), 
+                1.7vw -0.1vw 0 0 var(--forest-green);
+}
+.front-left-foot::after {
+    content: '';
+    position: absolute;
+    top: 0.3vw;
+    left: 0.3vw;
+    background: var(--gecko-body);
+    border-radius: 40% 40% 50% 50%;
+    width: 1.1vw;
+    height: 1.1vw;
+    box-shadow: -1.1vw 0vw 0 0 var(--forest-green), 
+                -0.9vw -0.9vw 0 0 var(--forest-green), 
+                0vw -1.3vw 0 0 var(--forest-green), 
+                0.5vw -0.8vw 0 0 var(--forest-green), 
+                1vw -0.1vw 0 0 var(--forest-green);
+}
 
 .front-right-foot {
     position: absolute;
-    top: -80%;
-    left: 10%;
+    top: 0;
+    left: 0;
     background: var(--gecko-body);
     border-radius: 40%;
     width: 1.5vw;
     height: 1.5vw;
     transform-origin: bottom center;
-    transform: rotate(-90deg);
+    transform: rotate(-20deg);
     box-shadow: -3vw 0vw 0 0 var(--lime-green), 
                 -2.1vw -2.1vw 0 0 var(--lime-green), 
                 0vw -3vw 0 0 var(--lime-green), 
@@ -260,14 +290,14 @@ body, html {
 }
 .back-left-foot {
     position: absolute;
-    top: -80%;
-    left: 10%;
+    top: 0;
+    left: 0;
     background: var(--gecko-body);
     border-radius: 40%;
     width: 1.5vw;
     height: 1.5vw;
     transform-origin: bottom center;
-    transform: rotate(90deg);
+    transform: rotate(10deg);
     box-shadow: -3vw 0vw 0 0 var(--lime-green), 
                 -2.1vw -2.1vw 0 0 var(--lime-green), 
                 0vw -3vw 0 0 var(--lime-green), 
@@ -282,14 +312,14 @@ body, html {
 }
 .back-right-foot {
     position: absolute;
-    top: -80%;
-    left: 10%;
+    top: 0;
+    left: 0;
     background: var(--gecko-body);
     border-radius: 40%;
     width: 1.5vw;
     height: 1.5vw;
     transform-origin: bottom center;
-    transform: rotate(-90deg);
+    transform: rotate(-10deg);
     box-shadow: -3vw 0vw 0 0 var(--lime-green), 
                 -2.1vw -2.1vw 0 0 var(--lime-green), 
                 0vw -3vw 0 0 var(--lime-green), 
