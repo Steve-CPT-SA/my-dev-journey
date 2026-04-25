@@ -17,12 +17,21 @@
     --gecko-eye: radial-gradient(circle at center, var(--deep-black) 40%, var(--charcoal-black) 70%, var(--glossy-black) 100%);
 }
 
+/* keyframes for crawling animation */
+@keyframes crawl {
+    from {
+        transform: translateX(0) rotate(-90deg);
+    }
+    to {
+        transform: translateX(-100vw) rotate(-90deg);
+    }
+}
+
 /* Global Styles */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     background: var(--muted-white);
     display: flex;
     justify-content: center;
@@ -32,10 +41,11 @@ body, html {
 /* Gecko container */
 .gecko {
     position: relative;
-    top: 20%;
-    left: 50%;
+    bottom: 50%;
+    left: 80%;
     height: 47vw;
     width: 47vw;
+    animation: crawl 10s linear infinite;
 }
 
 /* Gecko body*/
