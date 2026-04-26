@@ -26,6 +26,22 @@
         transform: translateX(-100vw) rotate(-90deg);
     }
 }
+@keyframes front-left-gait {
+    from {
+        transform: rotate(-120deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+@keyframes back-right-gait {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(60deg);
+    }
+}
 
 /* Global Styles */
 body, html {
@@ -45,7 +61,7 @@ body, html {
     left: 80%;
     height: 47vw;
     width: 47vw;
-    animation: crawl 10s linear infinite;
+    animation: crawl 10s steps(10);
 }
 
 /* Gecko body*/
@@ -119,7 +135,7 @@ body, html {
     width: 2vw;
     height: 8vw;
     transform-origin: right;
-    transform: rotate(-120deg);
+    animation: front-left-gait 0.5s ease-in-out infinite alternate;
 }
 .front-left-forearm {
     position: absolute;
@@ -208,7 +224,7 @@ body, html {
     width: 2vw;
     height: 8vw;
     transform-origin: left;
-    transform: rotate(60deg);
+    animation: back-right-gait 0.5s ease-in-out infinite alternate;
 }
 .back-right-forearm {
     position: absolute;
