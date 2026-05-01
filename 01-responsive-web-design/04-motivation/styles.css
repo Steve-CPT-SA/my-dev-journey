@@ -1,0 +1,49 @@
+/* Roots and import Styles */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root {
+    --bg-color: #0e0e1d;
+    --text-color: #f0ece4;
+    --border-color: #2e225f;
+    --accent-color: #101f8c;
+    --shadow-color: rgba(199, 199, 196, 0.5);
+    --font-family: 'Caveat', cursive;
+}
+
+/* body and global styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+/*header and footer styles */
+.paradox-header, .footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--accent-color);
+    font-size: x-large;
+}
+.paradox-header {
+    border-bottom: 4px solid var(--border-color);
+}
+.footer {
+    border-top: 4px solid var(--border-color);
+}
+
+/* intro section styles */
+.intro {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
