@@ -47,3 +47,56 @@ body {
     text-align: center;
     line-height: 1.6;
 }
+
+/*Paradox section styles and Grids */
+.paradox {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+.paradox-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image-before image-after"
+                            "text-before text-after";
+}
+.image-before {
+    grid-area: image-before;
+}
+.image-after {
+    grid-area: image-after;
+}
+.text-before {
+    grid-area: text-before;
+}
+.text-after {
+    grid-area: text-after;
+}
+
+/* Paradox Titles */
+.paradox-title {
+    
+}
+
+/* Paradox Text */
+.text-after, .text-before {
+
+}
+
+/* Images */
+.image-after, .image-before {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .paradox-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text-before image-before"
+                            "image-after text-after";
+    }
+}
