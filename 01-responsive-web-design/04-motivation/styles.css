@@ -3,6 +3,7 @@
 
 :root {
     --bg-color: #0e0e1d;
+    --paradox-color: #030115; 
     --text-color: #f0ece4;
     --border-color: #2e225f;
     --accent-color: #101f8c;
@@ -14,7 +15,6 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 4rem 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     line-height: 1.6;
 }
@@ -53,11 +53,12 @@ body {
 .paradox {
     display: flex;
     flex-direction: column;
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
     gap: 2rem;
 }
 .paradox-grid {
     display: grid;
+    align-items: center;
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "image-before image-after"
@@ -71,26 +72,36 @@ body {
 }
 .text-before {
     grid-area: text-before;
-    justify-content: flex-end;
 }
 .text-after {
     grid-area: text-after;
-    justify-content: flex-start;
+}
+#paradox1, #paradox2, #paradox3, #paradox4, #paradox5, .closing {
+    background-color: var(--paradox-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-radius: 30px;
+    margin: 2rem;
+}
+.closing {
+    padding: 2rem 1rem;
 }
 
 /* Paradox Titles */
 .paradox-title {
-    font-size: 3rem;
+    font-size: 4rem;
+    text-decoration: underline;
 }
 
 /* Paradox Text */
 .text-after, .text-before {
-    font-size: 2rem;
+    font-size: 4rem;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .closing p {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     padding: 1rem;
     max-width: 80%;
@@ -98,17 +109,21 @@ body {
 }
 
 /* Images */
+.image-before, .image-after{
+    min-height: 50vh;
+}
 .image-after img, .image-before img {
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    max-height: 50vh;
     display: block;
     object-fit: cover;
-    margin: 1rem 0;
     border: 2px solid var(--border-color);
     box-shadow: 0 0 15px var(--shadow-color);
 }
 .closing-image img {
     display: block;
+    object-fit: cover;
     width: 80%;
     height: 90vh;
     margin: 0 auto;
