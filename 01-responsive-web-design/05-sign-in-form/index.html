@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign-in Form project">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign-in Form</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <form action="/signin" method="post">
+        <fieldset>
+
+            <legend>Sign-in</legend>
+
+            <input id="user-sign" name="user" type="text" required>
+            <label for="user-sign">Email or phone number</label>
+
+            <input type="password" name="user-password" id="password" required>
+            <label for="password">Password</label>
+
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="checkbox" name="remember">  
+                    <label for="checkbox">Remember me</label>    
+                </div>
+                <a href="#">Need help?</a>
+            </div>
+
+            <button type="submit" id="btn-sign-in" name="sign-in" value="true" autofocus>Sign In</button>
+        
+        </fieldset>
+    </form>
+    <div class="new-user">
+        <p>New to this site? <a href="#">Sign up now</a></p>
+        <small>This page is only an example. <a href="#">Learn more</a></small>
+    </div>
+</body>
+</html>
