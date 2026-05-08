@@ -1,0 +1,19 @@
+/* Root and Base Styles */
+
+:root {
+    --primary-text: #f3f6f8;
+    --secondary-text: #b8c2cc;
+    --placeholder-text: #8a97a3;
+    --input-field: #f3f6f8;
+    --btn-bg: linear-gradient(135deg, #c97832, #e0a15d);
+    --btn-text: #f8f4ee;
+    --link-color: #9dc7e8;
+    --link-hover: #c7e7ff;
+    --muted-red: #9b3a3a;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
