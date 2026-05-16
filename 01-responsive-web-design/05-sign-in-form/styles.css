@@ -1,5 +1,4 @@
 /* Root and Base Styles */
-
 :root {
     --primary-text: #f3f6f8;
     --secondary-text: #b8c2cc;
@@ -16,4 +15,66 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    background: url('images/landscape.png');
+    background-size: cover;
+}
+
+h1 {
+    color: var(--primary-text);
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+/* Form Styles */
+form {
+    margin: 2rem auto;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+.form-field {
+    position: relative;
+    margin-bottom: 16px;
+}
+.form-field input:is(:focus, :valid) {
+    padding: 16px 20px 0;
+}
+.form-field input:is(:focus, :valid) ~ label {
+    font-size: 1.5rem;
+    transform: translateY(-130%);
+}
+.form-field label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: var(--placeholder-text);
+    pointer-events: none;
+    transition: all 0.1s ease;
+}
+.form-help {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    position: absolute;
+}
+/* Input and Label Styles */
+input {
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    border-radius: 0.5rem;
+    background-color: var(--input-field);
+    font-size: 3rem;
 }
