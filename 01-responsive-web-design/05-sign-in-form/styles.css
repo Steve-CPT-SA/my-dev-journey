@@ -37,8 +37,12 @@ form {
     max-width: 600px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(255,255,255,0.2);
     border-radius: 10px;
+}
+form:hover {
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(255,255,255,0.1) 0px 4px 30px;
 }
 
 /* Input Styles */
@@ -74,4 +78,70 @@ input {
     top: 1.75rem;
     padding: 0.25rem 0;
     transform: translateY(0);
+}
+
+/* Form help and Remember me */
+.form-help{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.form-help input{
+    width: auto;
+    margin-right: 0.5rem;
+}
+.form-help label{
+    color: var(--secondary-text);
+    font-size: 1rem;
+}
+
+/* Button Styles */
+button {
+    display: block;
+    width: 60%;
+    padding: 1rem;
+    margin:auto;
+    border-style: none;
+    border-radius: 1rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.03);
+    transition: all 0.4s ease-in;
+}
+
+/* Link Styles */
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* New User */
+.new-user {
+    text-align: center;
+    margin-top: 1rem;
+}
+.new-user p, small {
+    color: var(--secondary-text);
+    font-size: 1rem;
+}
+
+/* Legend */
+legend {
+    color: var(--primary-text);
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
