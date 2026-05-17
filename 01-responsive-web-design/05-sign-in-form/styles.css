@@ -38,10 +38,10 @@ form {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.4s ease-in-out;
 }
 form:hover {
-    background-color: rgba(255,255,255,0.1);
-    transition: all 0.3s ease-in-out;
     box-shadow: rgba(255,255,255,0.1) 0px 4px 30px;
 }
 
@@ -55,6 +55,10 @@ input {
     border-radius: 1rem;
     background-color: var(--input-field);
     font-size: 1rem;
+}
+input:focus {
+    outline: 2px solid var(--muted-red);
+    transition: all 0.4s ease-in-out;
 }
 
 /* Floating Label Styles */
@@ -107,10 +111,11 @@ button {
     color: var(--btn-text);
     font-size: 1.25rem;
     cursor: pointer;
+    transition: all 0.4s ease-in;
 }
 button:hover {
     transform: scale(1.03);
-    transition: all 0.4s ease-in;
+    
 }
 
 /* Link Styles */
