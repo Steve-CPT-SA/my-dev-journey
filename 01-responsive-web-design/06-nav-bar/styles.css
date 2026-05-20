@@ -1,0 +1,28 @@
+:root {
+    --nav-bg: #0D0D0D;
+    --nav-text: #797979;
+    --nav-hover: #007ACC;
+}
+
+.nav {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+}
+.navigation-bar {
+    list-style: none;
+    display: flex;
+}
+.navigation-bar li {
+    margin: 1em;
+}
+.navigation-bar li a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+.navigation-bar li a:hover {
+    color: var(--nav-hover);
+}
