@@ -9,10 +9,15 @@
     margin: 0;
     width: 100%;
     background-color: var(--nav-bg);
+    border-radius: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .navigation-bar {
     list-style: none;
     display: flex;
+    justify-content: space-around;
 }
 .navigation-bar li {
     margin: 1em;
@@ -25,4 +30,14 @@
 }
 .navigation-bar li a:hover {
     color: var(--nav-hover);
+}
+
+@media (max-width: 760px) {
+    .navigation-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav {
+        border-radius: 0 0 1rem 1rem;
+    }
 }
