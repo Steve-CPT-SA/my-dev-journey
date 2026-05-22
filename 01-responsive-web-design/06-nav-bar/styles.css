@@ -34,10 +34,27 @@
 
 @media (max-width: 760px) {
     .navigation-bar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-around;
+        padding: 0.8rem 0;
     }
     .nav {
-        border-radius: 0 0 1rem 1rem;
+        border-radius: 1rem 1rem 0 0;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        width: 100%;
+
+    }
+    .navigation-bar li {
+        margin: 0;
+        flex: 1;
+        text-align: center;
+    }
+    .navigation-bar li a {
+        display: block;
+        padding: 0.5rem 0;
     }
 }
