@@ -40,3 +40,22 @@ Features
     -Clean Flexbox layout
     -Smooth hover effects
     -CSS custom properties using :root
+
+Responsive Behavior
+@media (max-width: 760px)
+
+When the screen width becomes 760px or smaller:
+
+The navbar moves to the bottom
+position: fixed is applied
+Navigation items evenly distribute across the screen
+Mobile-friendly spacing is added
+Future Improvements
+Add icons for navigation items
+Add active link styling
+Add animations/transitions
+Add dark/light mode toggle
+Convert into a reusable component
+Author
+
+Created by Stephen as part of practicing responsive web design and CSS layout concepts.
