@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    background-color: #dddcdc;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.picture {
+    flex: 1 1 min(300px, 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 15rem;
+}
+
+.picture img {
+    display: block;
+    max-height: 15rem;
+    width: 100%;
+    object-fit: cover;
+}
