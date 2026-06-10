@@ -58,6 +58,26 @@ body {
     border-radius: 8px;
 }
 
+.taoism {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(80, 200, 120, 0.5);
+}
+
+.shintoism {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(220, 20, 60, 0.5);
+}
+
+.neo-confucianism {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(30, 144, 255, 0.5);
+}
+
+.buddhism {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.zen {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(252, 252, 252, 0.5);
+}
+
 figcaption {
     margin-top: 0.75rem;
     line-height: 1.4;
