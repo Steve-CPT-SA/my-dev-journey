@@ -28,12 +28,12 @@ body {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 3rem;
+    justify-content: center;
 }
 
 .picture {
-    flex: 1 1 31%;
-    
+    flex: 0 1 35%;
     box-sizing: border-box;
     border-radius: 12px;
     background: rgba(0, 0, 0, 0.35);
@@ -67,3 +67,12 @@ figcaption em {
     color: #C8C1B5;
 }
 
+@media (max-width: 600px) {
+    .picture {
+        flex: 0 1 100%;
+    }
+    .picture:hover {
+        transform: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+}
