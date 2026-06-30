@@ -29,31 +29,123 @@
                     <h2>Projects Completed for this section of the repository</h2>
                     <article><!-- article for each project -->
                         <h3>01-barad-dur</h3>
-                        <p></p>
-                    </article> 
+                        <p>A scene from Tolkien's Mordor, built entirely with HTML and CSS. No JavaScript, no images, no libraries — just markup and stylesheets.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>clip-path</li>
+                                    <li>polygon()</li>
+                                    <li>radial-gradient</li>
+                                    <li>linear-gradient</li>
+                                    <li>CSS custom properties</li>
+                                    <li>border-radius</li>
+                                    <li>viewport units (vw, vh)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </article>
                     <article>
                         <h3>02-solar-system</h3>
-                        <p></p>
+                        <p>A pure HTML & CSS animated solar system</p>
+                        <p>The sun is anchored to the left edge of the screen, with all 9 planets orbiting outward using CSS animations. Includes an asteroid belt between Mars and Jupiter, Saturn and Uranus rings, and twinkling background stars. Hover over any planet or the sun to reveal its name.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>CSS custom properties (:root variables, @property)</li>
+                                    <li>@keyframes animations</li>
+                                    <li>transform: rotate() and translateX() for orbital mechanics</li>
+                                    <li>radial-gradient, linear-gradient, and repeating-linear-gradient for planet and sun textures</li>
+                                    <li>border-radius and box-shadow for planet shapes and glow effects</li>
+                                    <li>data-name attribute with ::after pseudo-element for hover tooltips</li>
+                                    <li>pointer-events: none for interaction control</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </article>
                     <article>
                         <h3>03-crawling-gecko</h3>
-                        <p></p>
+                        <p>A top-down gecko illustration built entirely with CSS, featuring a full body, four articulated legs with forearms and feet, and a diagonal gait crawling animation.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>border-radius to create organic body shapes including the body, head, tail, and limb segments</li>
+                                    <li>box-shadow to generate multiple toe pads and knuckle joints from single elements — avoiding the need for dozens of extra HTML elements</li>
+                                    <li>transform: rotate() with transform-origin to position and animate each limb segment from its joint pivot point</li>
+                                    <li>@keyframes with percentage stops to create a pause in the leg swing cycle</li>
+                                    <li>animation-delay to offset diagonal leg pairs for a realistic gait</li>
+                                    <li>steps() timing function for the body crawl movement</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </article>
                     <article>
                         <h3>04-motivation</h3>
-                        <p></p>
+                        <p>Five paradoxes of growth, each paired with AI-generated imagery. Dark aesthetic, handwritten typography, and a layout that shifts between mobile and desktop using CSS Grid.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>CSS Grid with grid-template-areas — named layout areas that reflow between breakpoints</li>
+                                    <li>Mobile-first typography — small by default, scaled up at min-width: 768px</li>
+                                    <li>CSS Custom Properties for the design system</li>
+                                    <li>Object-fit: cover for consistent image dimensions</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </article>
                     <article>
                         <h3>05-sign-in-form</h3>
-                        <p></p>
+                        <p>A reimagined sign-in form project, originally inspired by the Coddy.tech Netflix clone exercise. Built with semantic HTML and CSS only, no JavaScript.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>Floating label technique using CSS :focus, :valid, and the ~ sibling combinator</li>
+                                    <li>Glassmorphism card effect using backdrop-filter: blur()</li>
+                                    <li>CSS custom properties for consistent theming</li>
+                                    <li>Responsive layout using width: 100% and max-width</li>
+                                    <li>Accessible form structure using fieldset, legend, and paired label/input elements</li>
+                                    <li>Focus state styling for keyboard navigation</li>
+                                    <li>Hover transitions on the form card and button</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </article>
                     <article>
                         <h3>06-nav-bar</h3>
-                        <p></p>
+                        <p>A simple responsive navigation bar built with HTML and CSS. The navigation automatically adapts between desktop and mobile layouts using CSS media queries.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5</li>
+                            <li>CSS3
+                                <ul>
+                                    <li>@media, :root, position ,z-index</li>
+                                    <li>flex-direction, justify-content, align-items</li>
+                                    <li>top, bottom</li>
+                                    <li>flexbox</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </article>
                     <article>
                         <h3>07-flexbox-photo-gallery</h3>
-                        <p></p>
+                        <p>Five Harmonies is a spiritual gallery exploring five Eastern philosophical traditions — Taoism, Shinto, Neo-Confucianism, Buddhism, and Zen.</p>
+                        <p>Each tradition is represented by two images showing a seed-to-bloom progression: the first image introduces a core concept, the second builds on it.</p>
+                        <p>The ten gallery images were generated using AI image generation tools (Microsoft Copilot) by crafting detailed prompts specifying style, palette, composition, and aspect ratio.</p>
+                        <p>The visual style draws from Samurai Jack's bold ink-line structure combined with Studio Ghibli's atmospheric watercolour washes, with each tradition carrying its own dominant colour.</p>
+                        <h4>Technologies Used</h4>
+                        <ol>
+                            <li>HTML5 (semantic elements: section, figure, figcaption)</li>
+                            <li>CSS3 (Flexbox, media queries, CSS reset)</li>
+                        </ol>
                     </article>
                 </section>
 
