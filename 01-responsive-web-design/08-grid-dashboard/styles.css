@@ -9,40 +9,58 @@
     --accent-green: #238636; /* streaks / success */
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
-    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 header {
-    background-color: var(--bg-surface);
+    background-color: var(--bg-color);
     border-bottom: var(--border);
-    padding: 20px;
     text-align: center;
+    padding: 1rem;
+}
+
+section {
+    background-color: var(--bg-surface);
+    border: var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 main {
-    background-color: var(--bg-surface);
+    background-color: var(--bg-color);
     border: var(--border);
-    padding: 20px;
-    margin: 20px 0;
+    padding: 1rem;
 }
 
 aside {
     background-color: var(--bg-surface);
     border: var(--border);
-    padding: 20px;
-    margin: 20px 0;
+    padding: 1rem;
+}
+
+aside details {
+    background-color: var(--bg-surface);
+    border: var(--border);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 footer {
     background-color: var(--bg-surface);
     border-top: var(--border);
-    padding: 20px;
     text-align: center;
+    padding: 1rem;
 }
 
 .dashboard-container {
