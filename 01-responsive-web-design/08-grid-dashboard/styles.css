@@ -17,7 +17,6 @@
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-primary);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
@@ -26,6 +25,21 @@ header {
     border-bottom: var(--border);
     text-align: center;
     padding: 1rem;
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+summary {
+    color: var(--text-primary);
+    font-weight: bold;
 }
 
 section {
@@ -55,6 +69,7 @@ aside details {
     margin-bottom: 0.5rem;
     cursor: pointer;
 }
+
 
 footer {
     background-color: var(--bg-surface);
