@@ -70,12 +70,70 @@ aside details {
     cursor: pointer;
 }
 
+ul {
+    list-style-type: square;
+    padding-left: 0.5rem;
+    margin: 1rem;
+    color: var(--text-secondary);
+}
+
+aside li {
+    margin-bottom: 0.25rem;
+
+}
+
+details {
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+details summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none; /* removes default arrow in some browsers */
+}
+
+/* Tap feedback (while pressing) */
+details summary:active {
+  background: var(--bg-surface); /* quick press effect */
+  transform: scale(0.98); /* tactile shrink */
+}
+
+/* Persistent focus feedback (after tap) */
+details summary:focus {
+  outline: none; /* remove default outline */
+  background: var(--bg-surface); /* highlight to show engagement */
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.3);
+}
+
+/* Expanded state styling */
+details[open] summary {
+  background: var(--bg-surface); /* distinct color when open */
+}
+
+details[open] {
+  border-color: var(--accent-blue);
+}
+
+/* Content inside details */
+details p {
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+}
 
 footer {
     background-color: var(--bg-surface);
     border-top: var(--border);
     text-align: center;
     padding: 1rem;
+}
+
+footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
 }
 
 .dashboard-container {
