@@ -1,3 +1,4 @@
+/* Root variables */
 :root {
     --bg-color:#0D1117; /* main background */
     --bg-surface: #161B22; /* card/panel background */
@@ -9,22 +10,17 @@
     --accent-green: #238636; /* streaks / success */
 }
 
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base Elements */
 body {
     background-color: var(--bg-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-}
-
-header {
-    background-color: var(--bg-color);
-    border-bottom: var(--border);
-    text-align: center;
-    padding: 1rem;
 }
 
 h1, h2, h3 {
@@ -37,39 +33,6 @@ p {
     margin-bottom: 1rem;
 }
 
-summary {
-    color: var(--text-primary);
-    font-weight: bold;
-}
-
-section {
-    background-color: var(--bg-surface);
-    border: var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-main {
-    background-color: var(--bg-color);
-    border: var(--border);
-    padding: 1rem;
-}
-
-aside {
-    background-color: var(--bg-surface);
-    border: var(--border);
-    padding: 1rem;
-}
-
-aside details {
-    background-color: var(--bg-surface);
-    border: var(--border);
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-}
-
 ul {
     list-style-type: square;
     padding-left: 0.5rem;
@@ -77,65 +40,12 @@ ul {
     color: var(--text-secondary);
 }
 
-aside li {
-    margin-bottom: 0.25rem;
-
+summary {
+    color: var(--text-primary);
+    font-weight: bold;
 }
 
-details {
-  margin: 1rem 0;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-details summary {
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  list-style: none; /* removes default arrow in some browsers */
-}
-
-/* Tap feedback (while pressing) */
-details summary:active {
-  background: var(--bg-surface); /* quick press effect */
-  transform: scale(0.98); /* tactile shrink */
-}
-
-/* Persistent focus feedback (after tap) */
-details summary:focus {
-  outline: none; /* remove default outline */
-  background: var(--bg-surface); /* highlight to show engagement */
-  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.3);
-}
-
-/* Expanded state styling */
-details[open] summary {
-  background: var(--bg-surface); /* distinct color when open */
-}
-
-details[open] {
-  border-color: var(--accent-blue);
-}
-
-/* Content inside details */
-details p {
-  padding: 0.75rem 1rem;
-  background: var(--bg-surface);
-}
-
-footer {
-    background-color: var(--bg-surface);
-    border-top: var(--border);
-    text-align: center;
-    padding: 1rem;
-}
-
-footer a {
-    color: var(--accent-blue);
-    text-decoration: none;
-}
-
+/* Layout */
 .dashboard-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -150,20 +60,155 @@ footer a {
 
 header {
     grid-area: header;
+    background-color: var(--bg-color);
+    border-bottom: var(--border);
+    text-align: center;
+    padding: 1rem;
 }
 
 main {
     grid-area: main;
+    background-color: var(--bg-color);
+    border: var(--border);
+    padding: 1rem;
 }
 
 aside {
     grid-area: sidebar;
+    background-color: var(--bg-surface);
+    border: var(--border);
+    padding: 1rem;
 }
 
 footer {
     grid-area: footer;
+    background-color: var(--bg-surface);
+    border-top: var(--border);
+    text-align: center;
+    padding: 1rem;
 }
 
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+/* Components */
+section {
+    background-color: var(--bg-surface);
+    border: var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+details {
+  margin: 1rem 0;
+  border: var(--border);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+article {
+    background-color: var(--bg-color);
+    border: var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+article h3 {
+    flex-grow: 0;
+}
+
+article details {
+    flex-grow: 1;
+}
+
+article > details {
+    border: var(--border);
+    border-radius: 8px;
+    margin: 0;
+}
+
+details details { 
+    border: none;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+details summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  
+}
+
+details p {
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-surface);
+}
+
+aside details {
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+details ol {
+    color: var(--text-primary);
+    padding-left: 1.5rem;
+}
+
+aside li {
+    margin-bottom: 0.25rem;
+}
+
+/* Interactive States*/
+details summary:active {
+  background-color: var(--bg-color);
+  transform: scale(0.98);
+}
+
+details summary:hover, details summary:focus {
+  outline: none;
+  background-color: var(--bg-surface);
+  box-shadow: 0 0 0 3px var(--accent-blue);
+}
+
+details[open] {
+  border-color: var(--accent-blue);
+}
+
+details[open] summary {
+  background-color: var(--bg-surface);
+}
+
+aside details[open] {
+    border-color: var(--accent-green);
+}
+
+aside details summary:hover, aside details summary:focus {
+    outline: none;
+    background-color: var(--bg-surface);
+    box-shadow: 0 0 0 3px var(--accent-green);
+}
+
+a:hover, a:focus {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+/* Responsive Layout */
 @media (min-width: 992px) {
     .dashboard-container {
         grid-template-columns: 250px 1fr;
