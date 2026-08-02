@@ -29,3 +29,144 @@
     --font-body: clamp(1rem, 1.2vw + 0.5rem, 1.125rem); /* ~16–18px */
     --font-small: clamp(0.875rem, 1vw + 0.5rem, 0.95rem); /* ~14–15px */
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--page-bg);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    margin-bottom: var(--space-2);
+}
+
+/* Base: mobile-first */
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: var(--space-4);
+    border-radius: var(--space-2);
+}
+
+h1 {
+    font-size: var(--font-h1);
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+h1, label, legend {
+    color: var(--text-primary);
+}
+
+
+.form-field {
+    margin-bottom: var(--space-3);
+}
+
+.form-field input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: var(--space-2);
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.form-field input:focus {
+    outline: 2px solid var(--focus-color);
+}
+
+.form-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-2);
+    gap: var(--space-2);
+}
+
+.label-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    border: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: var(--font-small);
+}
+
+small, p {
+    color: var(--text-secondary);
+    font-size: var(--font-small);
+}
+
+.button button {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-body);
+    margin-top: var(--space-3);
+}
+
+input {
+    border: 1px solid var(--border-color);
+    padding: var(--space-2);
+    background: transparent;
+    color: var(--text-primary);
+}
+input:focus {
+    outline: 2px solid var(--focus-color);
+}
+
+.new-user {
+    margin-top: var(--space-3);
+}
+
+/* Tablet ≥600px */
+@media (min-width: 600px) {
+    .container { 
+        padding: var(--space-6);
+    }
+    .login-card { 
+        max-width: 400px; padding: var(--space-6);
+    }
+}
+
+/* Desktop ≥1024px */
+@media (min-width: 1024px) {
+    .login-card { 
+        max-width: 500px; padding: var(--space-8);
+    }
+    .form-field { 
+        margin-bottom: var(--space-4);
+    }
+    .new-user { 
+        margin-top: var(--space-4); text-align: center;
+    }
+}
