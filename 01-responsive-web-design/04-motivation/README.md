@@ -1,6 +1,6 @@
 04 — Paradoxical Motivation
 
-    A cinematic, mobile-first motivational    web page built with pure HTML and CSS. No JavaScript. No frameworks.
+    A cinematic, mobile-first motivational web page built with pure HTML and CSS. No JavaScript. No frameworks.
 
 About
 
