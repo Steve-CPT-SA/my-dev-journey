@@ -8,7 +8,7 @@
     <title>Accessible Profile Card</title>
 </head>
     <body>
-        <article class="card" role="region" aria-label="Profile card: Neon Ronin">
+        <article class="card" aria-label="Profile card: Neon Ronin">
             <header class="card-header">
                 <img src="image/neon-ronin.png" alt="Portrait of Neon Ronin, a cyberpunk accessibility guardian" class="card-img">
                 <h2 class="card-name">Neon Ronin</h2>
@@ -20,8 +20,10 @@
             </main>
 
             <footer class="card-footer">
-                <a href="mailto:ronin@example.com" class="card-link">Contact</a>
-                <a href="https://example.com" class="card-link">Portfolio</a>
+                <ul class="card-social-links">
+                    <li><a href="mailto:ronin@example.com" class="card-link" aria-label="Contact Neon Ronin">Contact</a></li>
+                    <li><a href="https://example.com" class="card-link" aria-label="View Neon Ronin's portfolio">Portfolio</a></li>
+                </ul>
             </footer>
         </article>
     </body>
