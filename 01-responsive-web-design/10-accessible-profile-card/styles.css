@@ -51,9 +51,38 @@ body {
     border-radius: 50%;
     filter: drop-shadow(0 0 8px var(--color-accent));
     transition: filter var(--transition-speed) ease;
+    animation: pulse 3s infinite;
 }
 
+.card-link {
+    display: inline-block;
+    margin-top: var(--space-small);
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
 
+.card-link:hover, .card-link:focus {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-medium) 0 0 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px var(--color-accent));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px var(--color-accent-hover));
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
     .card, .card:hover, .card:focus-within, .card-img {
