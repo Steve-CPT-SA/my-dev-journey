@@ -62,7 +62,7 @@ body {
     transition: color var(--transition-speed) ease;
 }
 
-.card-link:hover, .card-link:focus {
+.card-link:hover, .card-link:focus-visible {
     color: var(--color-accent-hover);
     text-decoration: underline;
     outline: 2px solid var(--color-focus);
