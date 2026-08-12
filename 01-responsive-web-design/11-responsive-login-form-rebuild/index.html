@@ -18,17 +18,27 @@
                 <legend>Login</legend>
 
                 <div class="login-card">
+                    <!-- Identifier field -->
                     <div class="form-field form-email">
-                        <input id="user-sign" name="user" type="text" required placeholder="Email or Phone number">
-                        <label for="user-sign" class="label-hidden">Email or phone number</label>
+                        <input id="user-sign" name="user" type="text" required
+                                placeholder="Email or Phone number"
+                                autocomplete="username" autofocus
+                                aria-describedby="user-error">
+                        <label for="user-sign">Email or phone number</label>
+                        <span id="user-error" class="error-message" hidden>Enter a valid email or phone number</span>
                     </div>
 
+                    <!-- Password field -->
                     <div class="form-field form-password">
-                        <input type="password" name="user-password" id="password" required placeholder="Password">
+                        <input type="password" name="user-password" id="password" required
+                                placeholder="Password"
+                                autocomplete="current-password"
+                                aria-describedby="password-error">
                         <label for="password" class="label-hidden">Password</label>
+                        <span id="password-error" class="error-message" hidden>Password must not be empty</span>
                     </div>
                 
-
+                    <!-- Help options -->
                     <div class="form-help">
                         <div class="remember-me">
                             <input type="checkbox" id="checkbox" name="remember">  
@@ -37,8 +47,9 @@
                         <a href="#">Need help?</a>
                     </div>
 
+                    <!-- Submit button -->
                     <div class="button">
-                        <button type="submit" id="btn-sign-in" name="sign-in" value="true" autofocus>Login</button>
+                        <button type="submit" id="btn-sign-in" name="sign-in" value="true">Login</button>
                     </div>
                 </div>
 
