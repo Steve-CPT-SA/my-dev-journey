@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Welcome</h1>
 
-        <form action="/signin" method="post">
+        <form action="/signin" method="post" novalidate>
             <fieldset>
 
                 <legend>Login</legend>
@@ -25,7 +25,7 @@
                                 autocomplete="username" autofocus
                                 aria-describedby="user-error">
                         <label for="user-sign">Email or phone number</label>
-                        <span id="user-error" class="error-message" hidden>Enter a valid email or phone number</span>
+                        <span id="user-error" class="error-message" hidden role="alert">Enter a valid email or phone number</span>
                     </div>
 
                     <!-- Password field -->
@@ -34,8 +34,8 @@
                                 placeholder="Password"
                                 autocomplete="current-password"
                                 aria-describedby="password-error">
-                        <label for="password" class="label-hidden">Password</label>
-                        <span id="password-error" class="error-message" hidden>Password must not be empty</span>
+                        <label for="password">Password</label>
+                        <span id="password-error" class="error-message" hidden role="alert">Password must not be empty</span>
                     </div>
                 
                     <!-- Help options -->
