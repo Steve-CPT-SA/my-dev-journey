@@ -105,6 +105,11 @@ input[type="text"], input[type="password"] {
     cursor: text;
 }
 
+input:focus, button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
 button {
     background-color: var(--accent-color);
     color: var(--white);
@@ -123,4 +128,35 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: var(--space-1);
+}
+
+input[aria-invalid="true"] {
+    border-color: var(--error-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    button {
+        transition: transform 0.15s ease;
+    }
+    button:hover {
+        transform: scale(1.05);
+    }
+    button:active {
+        transform: scale(0.95)
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+    .login-card {
+        padding: var(--space-5);
+    }
 }
