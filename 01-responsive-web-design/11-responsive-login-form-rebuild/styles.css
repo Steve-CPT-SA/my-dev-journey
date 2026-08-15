@@ -7,6 +7,7 @@
     --blue-600: #2563eb;
     --red-500: #ef4444;
     --white: #ffffff;
+    --darker-blue: #1e40af;
 
 /*spacing scale */
     --space-1: 0.25rem;
@@ -27,6 +28,7 @@
     --accent-color: var(--blue-600);
     --error-color: var(--red-500);
     --border-color: var(--gray-400);
+    --hover-color: var(--darker-blue);
 }
 
 * {
@@ -94,3 +96,31 @@ fieldset {
     gap: var(--space-3);
 }
 
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: var(--font-base);
+    cursor: text;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 4px;
+    font-size: var(--font-base);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
