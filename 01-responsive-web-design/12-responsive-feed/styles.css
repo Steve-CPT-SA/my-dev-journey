@@ -42,6 +42,7 @@ header, footer {
     gap: var(--space-m);
     padding: var(--space-m);
     grid-template-columns: 1fr;
+    align-items: start;
 }
 
 .card {
@@ -137,11 +138,70 @@ header, footer {
     color: var(--text-primary);
 }
 
+.card--row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-m);
+    padding: 0;
+}
+
+.card--row .card-media {
+    flex: 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--cream-100);
+}
+
+.card--row .card-media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card--row .card-media figcaption {
+    padding: var(--space-s);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background: var(--cream-100);
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.card--row .card-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    gap: var(--space-m);
+}
+
+.card--row .card-footer {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid var(--border-color);
+    background: var(--cream-100);
+    margin-top: 0;
+}
+
+.card--row .card-body, .card--row .card-footer, .card--row .card-header {
+    padding: var(--space-s);
+}
+
 @media (min-width: 600px) {
     .feed {
         grid-template-columns: repeat(2, 1fr);
     }
+    .card--row {
+        flex-direction: column;
+        gap: 0;
+    }
 }
+
 
 @media (min-width: 900px) {
     .feed {
