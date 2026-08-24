@@ -192,6 +192,18 @@ header, footer {
     padding: var(--space-s);
 }
 
+.card--featured {
+    grid-column: 1 / span 2;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+}
+
+.card--featured .card-media img {
+    max-width: none;
+    width: 100%;
+}
+
 @media (min-width: 600px) {
     .feed {
         grid-template-columns: repeat(2, 1fr);
@@ -201,10 +213,17 @@ header, footer {
         gap: 0;
     }
 }
-
+@media (min-width: 600px) and (max-width: 899px) {
+    .card--featured {
+        grid-column: auto;
+    }
+}
 
 @media (min-width: 900px) {
     .feed {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .card--featured {
+        grid-column: span 2;
     }
 }
