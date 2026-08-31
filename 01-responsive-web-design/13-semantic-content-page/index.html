@@ -4,120 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Transition: Electrician -> Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
 </head>
 <body>
 
-    <header>
-        <h1>From Electrician to Developer</h1>
-        <p>I have <mark>12 years of experiance</mark> as an electrician, and now I'm building a <mark>daily coding habit</mark> to transition into tech with a focus on <mark></mark>.</p>
+    <header class="site-header">
+        <h1 class="site-header__title">From Electrician to Developer</h1>
+        <p class="site-header__intro">I have <mark class="site-header__highlight">12 years of experience</mark> as an electrician, and now I'm building a <mark class="site-header__highlight">daily coding habit</mark> to transition into tech with a focus on <mark class="site-header__highlight">AI/ML development</mark>.</p>
     </header>
 
-    <main>
-        <section>
-            <h2>Career Transition FAQ</h2>
+    <main class="site-main">
+        <section class="faq">
+            <h2 class="faq__title">Career Transition FAQ</h2>
 
-            <details>
-                <summary>Why electrician -> tech?</summary>
-                <p></p>
+            <details class="faq__item">
+                <summary class="faq__question">Why electrician -> tech?</summary>
+                <p class="faq__answer">What began as a hobby quickly grew into a passion. As I explored coding, I realized it aligned with my problem-solving mindset and opened new opportunities. Over time, my focus shifted from electrical work to tech, and I now dedicate time every day to learning and building.</p>
             </details>
 
-            <details>
-                <summary>What challenges do I face?</summary>
-                <p></p>
+            <details class="faq__item">
+                <summary class="faq__question">What challenges do I face?</summary>
+                <p class="faq__answer">Balancing a full-time, physically demanding job with consistent study requires discipline. Even when I'm tired after work, I make space in my evenings and weekends to practice. Rather than seeing age as a disadvantage, I view my experience and persistence as strengths that fuel my transition.</p>
             </details>
 
-            <details>
-                <summary>What resources help the most?</summary>
-                <p></p>
+            <details class="faq__item">
+                <summary class="faq__question">What resources help the most?</summary>
+                <p class="faq__answer">FreeCodeCamp is giving me a strong foundation, while Coddy.tech helps me practice daily. I also use mobile apps like Mimo and Enki during mornings before work. For deeper understanding, I turn to Claude and Copilot to clarify concepts and guide me through challenges when needed.</p>
             </details>
 
-            <details>
-                <summary>Where am I headed?</summary>
-                <p></p>
+            <details class="faq__item">
+                <summary class="faq__question">Where am I headed?</summary>
+                <p class="faq__answer">My immediate goal is to step into a junior developer role, knowing that growth comes from starting at the ground level and building upward. I'm excited to continue this journey, expand my skills, and ultimately specialize in areas like AI and machine learning.</p>
             </details>       
         </section>
 
-        <section>
-            <h2>Skills Dashboard</h2>
+        <section class="skills">
+            <h2 class="skills__title">Skills Dashboard</h2>
 
             <div class="skill-row">
-                <label for="html-skill">HTML</label>
-                <progress id="html-skill" value="80" max="100">80%</progress>
-                <span aria-hidden="true">80%</span>
+                <label for="html-skill" class="skill-row__label">HTML</label>
+                <progress id="html-skill" value="80" max="100" class="skill-row__bar">80%</progress>
+                <span aria-hidden="true" class="skill-row__percent">80%</span>
             </div>
             
             <div class="skill-row">
-                <label for="css-skill">CSS</label>
-                <progress id="css-skill" value="75" max="100">75%</progress>
-                <span aria-hidden="true">75%</span>
+                <label for="css-skill" class="skill-row__label">CSS</label>
+                <progress id="css-skill" value="75" max="100" class="skill-row__bar">75%</progress>
+                <span aria-hidden="true" class="skill-row__percent">75%</span>
             </div>
             
             <div class="skill-row">
-                <label for="js-skill">JavaScript</label>
-                <progress id="js-skill" value="60" max="100">60%</progress>
-                <span aria-hidden="true">60%</span>  
+                <label for="js-skill" class="skill-row__label">JavaScript</label>
+                <progress id="js-skill" value="60" max="100" class="skill-row__bar">60%</progress>
+                <span aria-hidden="true" class="skill-row__percent">60%</span>  
             </div>
             
             <div class="skill-row">
-                <label for="python-skill">Python</label>
-                <progress id="python-skill" value="50" max="100">50%</progress>
-                <span aria-hidden="true">50%</span>  
+                <label for="python-skill" class="skill-row__label">Python</label>
+                <progress id="python-skill" value="50" max="100" class="skill-row__bar">50%</progress>
+                <span aria-hidden="true" class="skill-row__percent">50%</span>  
             </div>
             
             <div class="skill-row">
-                <label for="go-skill">Go</label>
-                <progress id="go-skill" value="40" max="100">40%</progress>
-                <span aria-hidden="true">40%</span>    
+                <label for="go-skill" class="skill-row__label">Go</label>
+                <progress id="go-skill" value="40" max="100" class="skill-row__bar">40%</progress>
+                <span aria-hidden="true" class="skill-row__percent">40%</span>    
             </div>
             
             <div class="skill-row">
-                <label for="aws-skill">AWS / AI / ML</label>
-                <progress id="aws-skill" value="30" max="100">30%</progress>
-                <span aria-hidden="true">30%</span>    
+                <label for="aws-skill" class="skill-row__label">AWS / AI / ML</label>
+                <progress id="aws-skill" value="30" max="100" class="skill-row__bar">30%</progress>
+                <span aria-hidden="true" class="skill-row__percent">30%</span>    
             </div>
             
         </section>
 
-        <section>
-            <h2>Technical Terms Glossary</h2>
-            <dl>
-                <div class="glossary-item">
-                    <dt><abbr title="HyperText Markup Language">HTML</abbr></dt>
-                    <dd>HyperText Markup Language</dd>
+        <section class="glossary">
+            <h2 class="glossary__title">Technical Terms Glossary</h2>
+            <dl class="glossary__list">
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="HyperText Markup Language">HTML</abbr></dt>
+                    <dd class="glossary__definition">HyperText Markup Language</dd>
                 </div>
                 
-                <div class="glossary-item">
-                    <dt><abbr title="Cascading Style Sheets">CSS</abbr></dt>
-                    <dd>Cascading Style Sheets</dd>
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="Cascading Style Sheets">CSS</abbr></dt>
+                    <dd class="glossary__definition">Cascading Style Sheets</dd>
                 </div>
 
-                <div class="glossary-item">
-                    <dt><abbr title="Document Object Model">DOM</abbr></dt>
-                    <dd>Document Object Model</dd>
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="Document Object Model">DOM</abbr></dt>
+                    <dd class="glossary__definition">Document Object Model</dd>
                 </div>
                 
-                <div class="glossary-item">
-                    <dt><abbr title="Application Programming Interface">API</abbr></dt>
-                    <dd>Application Programming Interface</dd>
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="Application Programming Interface">API</abbr></dt>
+                    <dd class="glossary__definition">Application Programming Interface</dd>
                 </div>
 
-                <div class="glossary-item">
-                    <dt><abbr title="Artificial Intelligence">AI</abbr></dt>
-                    <dd>Artificial Intelligence</dd>
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="Artificial Intelligence">AI</abbr></dt>
+                    <dd class="glossary__definition">Artificial Intelligence</dd>
                 </div>
 
-                <div class="glossary-item">
-                    <dt><abbr title="Machine Learning">ML</abbr></dt>
-                    <dd>Machine Learning</dd>
+                <div class="glossary__item">
+                    <dt class="glossary__term"><abbr title="Machine Learning">ML</abbr></dt>
+                    <dd class="glossary__definition">Machine Learning</dd>
                 </div>
 
             </dl>
         </section>    
     </main>
 
-    <footer>
-        <p></p>
+    <footer class="site-footer">
+        <p class="site-footer__intro">Find me on:</p>
+            <ul class="site-footer__links">
+                <li class="site-footer__link site-footer__link--fcc"><a href="https://www.freecodecamp.org/SteveCPT-SA" target="_blank" rel="noopener noreferrer">FreeCodeCamp</a></li>
+                <li class="site-footer__link site-footer__link--coddy"><a href="https://coddy.tech/user/SteveCPTsa" target="_blank" rel="noopener noreferrer">Coddy.tech</a></li>
+                <li class="site-footer__link site-footer__link--github"><a href="https://github.com/Steve-CPT-SA" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
     </footer>
 
 </body>
