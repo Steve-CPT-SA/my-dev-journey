@@ -1,0 +1,42 @@
+:root{
+    /* Primitives */
+    --color-black: #0D1117;
+    --color-grey-dark: #161b22;
+    --color-grey-mid: #30363D;
+    --color-grey-light: #C9D1D9;
+    --color-grey-muted: #8B949E;
+    --color-blue: #58A6FF;
+    --color-green: #238636;
+    --color-yellow: #F2CC60;
+    --border-width: 2px;
+    --radius: 8px;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1rem;
+    --space-xl: 1.5rem;
+
+    /* Typography */
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* Semantics */
+    --bg-color: var(--color-black);
+    --bg-surface: var(--color-grey-dark);
+    --border-color: var(--color-grey-mid);
+    --border: var(--border-width) solid var(--border-color);
+    --text-primary: var(--color-grey-light);
+    --text-secondary: var(--color-grey-muted);
+    --accent-blue: var(--color-blue);
+    --accent-green: var(--color-green);
+    --accent-highlight: var(--color-yellow);
+    --highlight-text: var(--color-black);
+}
