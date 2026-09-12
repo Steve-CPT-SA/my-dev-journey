@@ -1,0 +1,113 @@
+/* FAQ */
+.faq__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+}
+
+.faq__item {
+    margin-bottom: var(--space-md);
+}
+
+.faq__question {
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--accent-blue);
+}
+
+.faq__answer {
+    margin-top: var(--space-sm);
+    color: var(--text-secondary);
+    line-height: var(--line-height-normal);
+}
+
+/* Skills Dashboard */
+.skill-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 3ch;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.skill-row__label {
+    font-weight: bold;
+}
+
+.skill-row__bar {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--space-lg);
+    border-radius: var(--radius);
+    background-color: var(--bg-surface);
+}
+
+.skill-row__bar::-webkit-progress-value {
+  background-color: var(--accent-green);
+  border-radius: var(--radius);
+}
+
+.skill-row__bar::-moz-progress-bar {
+  background-color: var(--accent-green);
+  border-radius: var(--radius);
+}
+
+.skill-row__percent {
+    text-align: right;
+    color: var(--text-secondary);
+}
+
+/* Glossary */
+.glossary__title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+}
+
+.glossary__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.glossary__item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.glossary__term {
+  font-weight: bold;
+}
+
+.glossary__definition {
+  color: var(--text-secondary);
+}
+
+/* Abbreviation styling */
+abbr {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--accent-blue);
+    cursor: help;
+}
+
+/* Mark highlight */
+.site-header__highlight {
+    background-color: var(--accent-highlight);
+    color: var(--highlight-text);
+    padding: 0 var(--space-xs);
+    border-radius: var(--radius);
+}
+
+/* Footer links */
+.site-footer__link a{
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-footer__link a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
