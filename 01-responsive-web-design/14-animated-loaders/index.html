@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="loader-base.css">
+    <link rel="stylesheet" href="loader-conic.css">
+    <link rel="stylesheet" href="loader-svg.css">
+    <title>Loader Comparison</title>
+</head>
+<body class="page">
+
+    <main class="page__main">
+
+        <h1 class="page__title">Loading animations prototypes</h1>
+
+        <!-- Conic-gradient loader: role="status" -->
+        <section class="loader loader--conic" role="status" aria-live="polite" aria-label="Loading progress">
+            <h2 class="loader__title">Conic-gradient Loader</h2>
+            <div class="loader__ring loader-conic__ring">
+                <!-- Decorative visual hidden separately -->
+                <div class="loader-conic__visual" aria-hidden="true"></div>
+                <span class="loader__percentage">0%</span>
+            </div>
+            <p class="loader__description">Conic-gradient sweep with smooth color blending.</p>
+        </section>
+
+        <!-- SVG loader: role="progressbar"-->
+        <section class="loader loader--svg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Loading progress">
+            <h2 class="loader__title">SVG Loader</h2>
+            <div class="loader__ring loader-svg__ring" >
+                <!-- Decorative visual hidden separately -->
+                <svg class="loader-svg__graphic" viewBox="0 0 150 150" aria-hidden="true">
+                    <circle 
+                        class="loader-svg__track" 
+                        cx="75" 
+                        cy="75" 
+                        r="70"
+                        fill="none">
+                    </circle>
+                    <circle 
+                        class="loader-svg__progress" 
+                        cx="75" 
+                        cy="75" 
+                        r="70"
+                        fill="none">
+                    </circle>
+                </svg>
+                <span class="loader__percentage">0%</span>
+            </div>
+            <p class="loader__description">SVG stroke-dasharray with discrete color jumps.</p>
+        </section>
+
+    </main>
+    <footer class="page-footer">
+        <p class="page-footer__text">Loading animation comparisons.</p>
+    </footer>
+</body>
+</html>
