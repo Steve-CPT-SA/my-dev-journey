@@ -1,15 +1,22 @@
 /* Conic ring variant */
+@property --progress-value {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
 .loader-conic__ring {
-    width: var(--loader-size);
-    height: var(--loader-size);
-    border-radius: 50%;
-    position: relative;
-    background: conic-gradient(
-        var(--color-ring-step1) 0deg 90deg,
-        var(--color-ring-step2) 90deg 180deg,
-        var(--color-ring-step3) 180deg 270deg,
-        var(--color-ring-step4) 270deg 360deg
-    );
-    transform: rotate(var(--progress-angle));
-    transform: transform var(--loader-duration) linear;
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border-radius: 50%;
+
+  background: conic-gradient(
+    var(--color-ring-step1) 0% min(var(--progress-value) * 1%, 25%),
+    var(--color-ring-step2) min(var(--progress-value) * 1%, 25%) min(var(--progress-value) * 1%, 50%),
+    var(--color-ring-step3) min(var(--progress-value) * 1%, 50%) min(var(--progress-value) * 1%, 75%),
+    var(--color-ring-step4) min(var(--progress-value) * 1%, 75%) min(var(--progress-value) * 1%, 100%),
+    var(--color-ring-track) calc(var(--progress-value) * 1%) 100%
+  );
+
+  transition: background var(--loader-duration) linear;
 }
