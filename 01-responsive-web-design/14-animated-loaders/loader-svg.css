@@ -1,0 +1,24 @@
+/* SVG ring variant */
+.loader-svg__ring {
+    width: var(--loader-size);
+    height: var(--loader-size);
+    position: relative;
+}
+
+.loader-svg__circle {
+    fill: none;
+    stroke: var(--color-ring-base);
+    stroke-width: var(--loader-stroke);
+    stroke-linecap: round;
+    r: var(--radius-circle);
+    cx: 50%;
+    cy: 50%;
+    stroke-dasharray: var(--circumference);
+    stroke-dashoffset: var(--progress-offset);
+    transition: stroke-dashoffset var(--loader-duration) linear, stroke var(--loader-fade) linear;
+}
+
+.loader-svg__circle[data-step="1"] {stroke: var(--color-ring-step1);}
+.loader-svg__circle[data-step="2"] { stroke: var(--color-ring-step2); }
+.loader-svg__circle[data-step="3"] { stroke: var(--color-ring-step3); }
+.loader-svg__circle[data-step="4"] { stroke: var(--color-ring-step4); }

@@ -1,0 +1,15 @@
+/* Conic ring variant */
+.loader-conic__ring {
+    width: var(--loader-size);
+    height: var(--loader-size);
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+        var(--color-ring-step1) 0deg 90deg,
+        var(--color-ring-step2) 90deg 180deg,
+        var(--color-ring-step3) 180deg 270deg,
+        var(--color-ring-step4) 270deg 360deg
+    );
+    transform: rotate(var(--progress-angle));
+    transform: transform var(--loader-duration) linear;
+}
