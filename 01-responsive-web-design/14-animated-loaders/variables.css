@@ -44,7 +44,7 @@
 
     /* Reactive tokens */
     --circumference: calc(2 * var(--pi) * var(--radius-circle));
-    --progress-value: 0;
+    
     --progress-angle: calc(var(--progress-value) * 3.6deg);
     --progress-offset: calc(var(--circumference) - (var(--progress-value) * (var(--circumference) / 100)));
 }

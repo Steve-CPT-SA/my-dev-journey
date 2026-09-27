@@ -1,0 +1,7 @@
+.page__main {
+    background: var(--color-bg);
+}
+
+.page__title {
+    color: var(--color-text);
+}
