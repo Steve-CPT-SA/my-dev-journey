@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="loader-base.css">
     <link rel="stylesheet" href="loader-conic.css">
     <link rel="stylesheet" href="loader-svg.css">
+    <link rel="stylesheet" href="loader-accessibility.css">
     <title>Loader Comparison</title>
 </head>
 <body class="page">
@@ -19,16 +20,16 @@
         <!-- Conic-gradient loader: role="status" -->
         <section class="loader loader--conic" role="status" aria-live="polite" aria-label="Loading progress">
             <h2 class="loader__title">Conic-gradient Loader</h2>
-            <div class="loader__ring loader-conic__ring" style="--progress-value: 60;">
+            <div class="loader__ring loader-conic__ring">
                 <!-- Decorative visual hidden separately -->
                 <div class="loader-conic__visual" aria-hidden="true"></div>
-                <span class="loader__percentage">60%</span>
+                <span class="loader__percentage">0%</span>
             </div>
             <p class="loader__description">Conic-gradient sweep with smooth color blending.</p>
         </section>
 
         <!-- SVG loader: role="progressbar"-->
-        <section class="loader loader--svg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-label="Loading progress">
+        <section class="loader loader--svg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Loading progress">
             <h2 class="loader__title">SVG Loader</h2>
             <div class="loader__ring loader-svg__ring" >
                 <!-- Decorative visual hidden separately -->
@@ -48,7 +49,7 @@
                         fill="none">
                     </circle>
                 </svg>
-                <span class="loader__percentage">40%</span>
+                <span class="loader__percentage">0%</span>
             </div>
             <p class="loader__description">SVG stroke-dasharray with discrete color jumps.</p>
         </section>

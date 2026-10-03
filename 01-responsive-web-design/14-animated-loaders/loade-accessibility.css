@@ -1,0 +1,11 @@
+ /* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --loader-duration: 0s;
+        --loader-fade: 0.2s;
+    }
+    .loader-conic__ring, .loader-svg__ring {
+        animation: none;
+        --progress-value: 100;
+    }
+}

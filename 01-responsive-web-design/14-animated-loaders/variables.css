@@ -38,21 +38,14 @@
     --radius: var(--radius-8);
     --space-md: 1rem;
 
-    --loader-duration: var(--duration-1200);
+
     --loader-fade: var(--duration-300);
     --loader-delay: var(--delay-200);
+    --loader-loop-duration: 30s;
 
     /* Reactive tokens */
     --circumference: calc(2 * var(--pi) * var(--radius-circle));
     
     --progress-angle: calc(var(--progress-value) * 3.6deg);
     --progress-offset: calc(var(--circumference) - (var(--progress-value) * (var(--circumference) / 100)));
-}
-
- /* Reduced motion overrides */
-@media (prefers-reduced-motion: reduce) {
-    :root {
-        --loader-duration: 0s;
-        --loader-fade: 0.2s;
-    }
 }

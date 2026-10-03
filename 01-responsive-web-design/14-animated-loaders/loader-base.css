@@ -24,7 +24,7 @@
     border-radius: 50%;
     display: grid;
     place-items: center;
-    
+    animation: sweepLoop var(--loader-loop-duration) linear infinite;
 }
 
 .loader__percentage {
@@ -32,4 +32,28 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-text);
+}
+
+@property --progress-value {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0; 
+}
+
+/* animation */
+@keyframes sweepLoop {
+    0% { --progress-value: 0;}
+    10% { --progress-value: 20;}
+    10.01% { --progress-value: 0;}
+    20% { --progress-value: 40;}
+    20.01% { --progress-value: 0;}
+    30% { --progress-value: 60;}
+    30.01% { --progress-value: 0;}
+    40% { --progress-value: 80;}
+    40.01% { --progress-value: 0;}
+    50% { --progress-value: 100;}
+    50.01% { --progress-value: 0;}
+    75% { --progress-value: 100;}
+    75.01% { --progress-value: 0;}
+    100% { --progress-value: 100;}
 }

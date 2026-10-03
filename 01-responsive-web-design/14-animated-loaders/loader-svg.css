@@ -1,16 +1,11 @@
 /* SVG ring variant */
-@property --progress-value {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0; 
-}
 
 .loader-svg__ring {
   width: var(--loader-size);
   height: var(--loader-size);
   display: grid;
   place-items: center;
-  --progress-value: 40;
+  --progress-value: 0;
   counter-reset: progress var(--progress-value);
 }
 

@@ -1,15 +1,10 @@
 /* Conic ring variant */
-@property --progress-value {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
 
 .loader-conic__ring {
   width: var(--loader-size);
   height: var(--loader-size);
   border-radius: 50%;
-
+  --progress-value: 0;
   background: conic-gradient(
     var(--color-ring-step1) 0% min(var(--progress-value) * 1%, 25%),
     var(--color-ring-step2) min(var(--progress-value) * 1%, 25%) min(var(--progress-value) * 1%, 50%),
@@ -18,7 +13,6 @@
     var(--color-ring-track) calc(var(--progress-value) * 1%) 100%
   );
 
-  transition: background var(--loader-duration) linear;
   counter-reset: progress var(--progress-value);
 }
 
