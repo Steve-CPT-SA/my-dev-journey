@@ -57,3 +57,28 @@
     75.01% { --progress-value: 0;}
     100% { --progress-value: 100;}
 }
+
+@supports not (counter-reset: progress var(--progress-value)) {
+  .loader__ring .loader__percentage {
+    font-size: 1rem;
+    color: inherit;
+  }
+  .loader__ring .loader__percentage::before {
+    content: none;
+  }
+}
+
+@supports (counter-reset: progress var(--progress-value)) {
+  .loader__ring .loader__percentage {
+    font-size: 0;
+    position: relative;
+  }
+  .loader__ring .loader__percentage::before {
+    font-size: 1rem;
+    color: var(--color-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}

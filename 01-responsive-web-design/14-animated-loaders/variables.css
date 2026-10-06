@@ -18,10 +18,6 @@
     --stroke-12: 12px;
     --radius-8: 8px;
 
-    --duration-1200: 1.2s;
-    --duration-300: 0.3s;
-    --delay-200: 0.2s;
-
     /* Semantic tokens */
     --color-bg: var(--gray-900);
     --color-text: var(--white);
@@ -38,14 +34,9 @@
     --radius: var(--radius-8);
     --space-md: 1rem;
 
-
-    --loader-fade: var(--duration-300);
-    --loader-delay: var(--delay-200);
     --loader-loop-duration: 30s;
 
     /* Reactive tokens */
     --circumference: calc(2 * var(--pi) * var(--radius-circle));
     
-    --progress-angle: calc(var(--progress-value) * 3.6deg);
-    --progress-offset: calc(var(--circumference) - (var(--progress-value) * (var(--circumference) / 100)));
 }
