@@ -25,6 +25,7 @@
     display: grid;
     place-items: center;
     animation: sweepLoop var(--loader-loop-duration) linear infinite;
+    counter-reset: progress round(var(--progress-value));
 }
 
 .loader__percentage {
@@ -32,6 +33,21 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-text);
+}
+
+.loader__ring .loader__percentage {
+  font-size: 0;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__ring .loader__percentage::before {
+  content: counter(progress) "%";
+  font-size: 1rem;
+  color: var(--color-text);
 }
 
 @property --progress-value {
@@ -68,7 +84,7 @@
   }
 }
 
-@supports (counter-reset: progress var(--progress-value)) {
+@supports (counter-reset: progress round(var(--progress-value))) {
   .loader__ring .loader__percentage {
     font-size: 0;
     position: relative;

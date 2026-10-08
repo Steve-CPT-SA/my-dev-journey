@@ -12,11 +12,6 @@
     var(--color-ring-step4) min(var(--progress-value) * 1%, 75%) min(var(--progress-value) * 1%, 100%),
     var(--color-ring-track) calc(var(--progress-value) * 1%) 100%
   );
-
-  counter-reset: progress var(--progress-value);
 }
 
-.loader-conic__ring .loader__percentage::before {
-  content: counter(progress) "%";
-}
 

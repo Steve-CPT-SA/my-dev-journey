@@ -6,7 +6,6 @@
   display: grid;
   place-items: center;
   --progress-value: 0;
-  counter-reset: progress var(--progress-value);
 }
 
 .loader-svg__graphic {
@@ -15,9 +14,6 @@
   height: 100%;
 }
 
-.loader-svg__ring .loader__percentage::before {
-  content: counter(progress) "%";
-}
 
 /* Track circle: static background */
 .loader-svg__track {
