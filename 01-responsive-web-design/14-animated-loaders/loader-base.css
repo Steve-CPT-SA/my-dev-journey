@@ -23,6 +23,7 @@
     height: var(--loader-size);
     border-radius: 50%;
     display: grid;
+    position: relative;
     place-items: center;
     animation: sweepLoop var(--loader-loop-duration) linear infinite;
     counter-reset: progress round(var(--progress-value));
@@ -30,24 +31,20 @@
 
 .loader__percentage {
     grid-area: 1 / 1;
-    font-size: 1.5rem;
+    font-size: 0;
     font-weight: bold;
     color: var(--color-text);
-}
-
-.loader__ring .loader__percentage {
-  font-size: 0;
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .loader__ring .loader__percentage::before {
   content: counter(progress) "%";
   font-size: 1rem;
   color: var(--color-text);
+  display: flex;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 @property --progress-value {
@@ -56,45 +53,36 @@
   initial-value: 0; 
 }
 
-/* animation */
-@keyframes sweepLoop {
-    0% { --progress-value: 0;}
-    10% { --progress-value: 20;}
-    10.01% { --progress-value: 0;}
-    20% { --progress-value: 40;}
-    20.01% { --progress-value: 0;}
-    30% { --progress-value: 60;}
-    30.01% { --progress-value: 0;}
-    40% { --progress-value: 80;}
-    40.01% { --progress-value: 0;}
-    50% { --progress-value: 100;}
-    50.01% { --progress-value: 0;}
-    75% { --progress-value: 100;}
-    75.01% { --progress-value: 0;}
-    100% { --progress-value: 100;}
+@property --stroke-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ff9800; /* must match --orange-500; var() not allowed here */
 }
 
-@supports not (counter-reset: progress var(--progress-value)) {
+/* animation */
+@keyframes sweepLoop {
+    0% { --progress-value: 0; --stroke-color: var(--color-ring-step1);}
+    10% { --progress-value: 20; --stroke-color: var(--color-ring-step1);}
+    10.01% { --progress-value: 0; --stroke-color: var(--color-ring-step2);}
+    20% { --progress-value: 40; --stroke-color: var(--color-ring-step2);}
+    20.01% { --progress-value: 0; --stroke-color: var(--color-ring-step3);}
+    30% { --progress-value: 60; --stroke-color: var(--color-ring-step3);}
+    30.01% { --progress-value: 0; --stroke-color: var(--color-ring-step4);}
+    40% { --progress-value: 80; --stroke-color: var(--color-ring-step4);}
+    40.01% { --progress-value: 0;--stroke-color: var(--color-ring-step1);}
+    50% { --progress-value: 100; --stroke-color: var(--color-ring-step1);}
+    50.01% { --progress-value: 0; --stroke-color: var(--color-ring-step2);}
+    75% { --progress-value: 100; --stroke-color: var(--color-ring-step2);}
+    75.01% { --progress-value: 0; --stroke-color: var(--color-ring-step3);}
+    100% { --progress-value: 100; --stroke-color: var(--color-ring-step3);}
+}
+
+@supports not (counter-reset: progress round(1)) {
   .loader__ring .loader__percentage {
     font-size: 1rem;
     color: inherit;
   }
   .loader__ring .loader__percentage::before {
     content: none;
-  }
-}
-
-@supports (counter-reset: progress round(var(--progress-value))) {
-  .loader__ring .loader__percentage {
-    font-size: 0;
-    position: relative;
-  }
-  .loader__ring .loader__percentage::before {
-    font-size: 1rem;
-    color: var(--color-text);
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
   }
 }

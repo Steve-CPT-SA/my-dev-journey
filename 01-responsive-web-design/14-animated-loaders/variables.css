@@ -1,11 +1,11 @@
 :root {
     /* Primitive values */
-    --gray-100: #f5f5f5;
+    
     --gray-900: #111111;
     --gray-300: #333333;
     --white: #ffffff;
 
-    --blue-500: #4cafef; /* base */
+    
     --orange-500: #ff9800; /* step 1 */
     --yellow-500: #fdd835; /* step 2 */
     --green-500: #66bb6a; /* step 3 */
@@ -16,14 +16,13 @@
 
     --size-150: 150px;
     --stroke-12: 12px;
-    --radius-8: 8px;
 
     /* Semantic tokens */
     --color-bg: var(--gray-900);
     --color-text: var(--white);
     --color-ring-track: var(--gray-300);
 
-    --color-ring-base: var(--blue-500);
+    
     --color-ring-step1: var(--orange-500);
     --color-ring-step2: var(--yellow-500);
     --color-ring-step3: var(--green-500);
@@ -31,7 +30,7 @@
 
     --loader-size: var(--size-150);
     --loader-stroke: var(--stroke-12);
-    --radius: var(--radius-8);
+    
     --space-md: 1rem;
 
     --loader-loop-duration: 30s;

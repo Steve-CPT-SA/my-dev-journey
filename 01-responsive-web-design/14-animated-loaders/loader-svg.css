@@ -1,10 +1,6 @@
 /* SVG ring variant */
 
 .loader-svg__ring {
-  width: var(--loader-size);
-  height: var(--loader-size);
-  display: grid;
-  place-items: center;
   --progress-value: 0;
 }
 
@@ -28,16 +24,14 @@
 /* Progress circle: dynamic arc */
 .loader-svg__progress {
   fill: none;
-  stroke: var(--color-ring-step1);
+  stroke: var(--stroke-color);
   stroke-width: var(--loader-stroke);
   stroke-linecap: round;
   r: var(--radius-circle);
   cx: 50%;
   cy: 50%;
-
   stroke-dasharray: var(--circumference);
   stroke-dashoffset: calc(var(--circumference) * (1 - var(--progress-value) / 100));
-
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }

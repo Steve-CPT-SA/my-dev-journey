@@ -1,7 +1,6 @@
-.page__main {
+.page {
     background: var(--color-bg);
-}
-
-.page__title {
     color: var(--color-text);
+    text-align: center;
+    padding: var(--space-md);
 }
