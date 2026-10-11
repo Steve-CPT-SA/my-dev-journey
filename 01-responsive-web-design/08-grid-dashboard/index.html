@@ -353,20 +353,54 @@
                             </ol>
                         </details>
                     </article>
+                        
+                    <article class="loader-comparison">
+                        <h3>14-loader-comparison</h3>
+                        <details>
+                            <summary>About this project</summary>
+                            <p>Two JavaScript free loaders built with different techniques: a conic-gradient ring and an SVG stroke ring. The project compares how each approach handles progress, color, accessibility, and browser support.</p>
+                            <p>Focus is on semantic HTML and CSS architecture, with deliberate tradeoffs (no JavaScript, static ARIA values) documented in the README.</p>
+                        </details>
+                        <details>
+                            <summary>Technology Used</summary>
+                            <ol>
+                            <li>HTML5
+                                <ul>
+                                <li>Semantic structure (header, main, section, footer)</li>
+                                <li>Accessible elements (details/summary, progress, abbr)</li>
+                                <li>ARIA roles (status, progressbar)</li>
+                                </ul>
+                            </li>
+                            <li>CSS3
+                                <ul>
+                                <li>Custom Properties (@property registration, design tokens)</li>
+                                <li>CSS counters with <code>round()</code> for percentage display</li>
+                                <li>Keyframes with duplicate stops for snap behavior</li>
+                                <li>Conic gradients (banded color ring)</li>
+                                <li>SVG stroke dashoffset (discrete lap colors)</li>
+                                <li>Reduced-motion overrides (freeze at 100%)</li>
+                                <li>Reset + Layout + Components architecture</li>
+                                </ul>
+                            </li>
+                            </ol>
+                        </details>
+                    </article>
+
+                    
 
                 <section id="in-progress">
                     <h2>Project in progress for this section of the repository.</h2>
                     <p>Note: Projects on this list will be updated and moved to the completed projects section.</p>
 
-                    <article class="animated-loader">
-                        <h3>14-animated-loader</h3>
+                <article class="button-component-library">
+                        <h3>15-button-component-library</h3>
                         <details>
                             <summary>About this project</summary>
-                            <p>Animated loader with context. The loading spinner will be inside a realistic "loading screen" context.</p>
-                            <p>branded, with a progress bar and message. CSS custom properties for theming, accessible motion preference handling.</p>
-                            <p>Skills: CSS animation + CSS architecture + Accessibility.</p>
+                            <p>Button component library Reimagine the fancy button as a small set of accessible, reusable buttons.</p>
+                            <p>primary, secondary, ghost, disabled, loading states. Use CSS custom properties for the token system. One file, consistent architecture.</p>
+                            <p>Skills: CSS architecture + Custom properties + Accessibility.</p>
                         </details>
-                    </article>
+                    </article>    
                     
                 </section>
 
@@ -376,17 +410,6 @@
 
                     <!-- article for each planned project -->
 
-                    
-
-                    <article class="button-component-library">
-                        <h3>15-button-component-library</h3>
-                        <details>
-                            <summary>About this project</summary>
-                            <p>Button component library Reimagine the fancy button as a small set of accessible, reusable buttons.</p>
-                            <p>primary, secondary, ghost, disabled, loading states. Use CSS custom properties for the token system. One file, consistent architecture.</p>
-                            <p>Skills: CSS architecture + Custom properties + Accessibility.</p>
-                        </details>
-                    </article>
                 </section>
 
                 <section id="other-repos">
