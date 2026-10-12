@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Button Component Library Demo</title>
+        <link rel = "stylesheet" href = "tokens.css">
+        <link rel = "stylesheet" href = "base.css">
+        <link rel = "stylesheet" href = "variants.css">
+        <link rel = "stylesheet" href = "demo.css">
+    </head>
+    <body>
+        <main>
+            <h1>Button Library Showcase</h1>
+            <table class="btn-grid">
+            <thead>
+                <tr>
+                <th>State</th>
+                <th>Primary</th>
+                <th>Secondary</th>
+                <th>Ghost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rest</td>
+                    <td><button class="btn btn--primary">Primary</button></td>
+                    <td><button class="btn btn--secondary">Secondary</button></td>
+                    <td><button class="btn btn--ghost">Ghost</button></td>
+                </tr>
+                <tr>
+                    <td>Hover</td>
+                    <td><button class="btn btn--primary is-hover">Primary</button></td>
+                    <td><button class="btn btn--secondary is-hover">Secondary</button></td>
+                    <td><button class="btn btn--ghost is-hover">Ghost</button></td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td><button class="btn btn--primary is-active">Primary</button></td>
+                    <td><button class="btn btn--secondary is-active">Secondary</button></td>
+                    <td><button class="btn btn--ghost is-active">Ghost</button></td>
+                </tr>
+                <tr>
+                    <td>Focus-visible</td>
+                    <td><button class="btn btn--primary is-focus">Primary</button></td>
+                    <td><button class="btn btn--secondary is-focus">Secondary</button></td>
+                    <td><button class="btn btn--ghost is-focus">Ghost</button></td>
+                </tr>
+                <tr>
+                    <td>Disabled</td>
+                    <td><button class="btn btn--primary" disabled>Primary</button></td>
+                    <td><button class="btn btn--secondary" disabled>Secondary</button></td>
+                    <td><button class="btn btn--ghost" disabled>Ghost</button></td>
+                </tr>
+                <tr>
+                    <td>Loading</td>
+                    <td><button class="btn btn--primary" aria-busy="true">Primary</button></td>
+                    <td><button class="btn btn--secondary" aria-busy="true">Secondary</button></td>
+                    <td><button class="btn btn--ghost" aria-busy="true">Ghost</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </main>
+    </body>
+</html>
