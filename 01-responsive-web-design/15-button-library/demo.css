@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.btn-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.btn-grid caption {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Apply widths to header row so fixed layout respects them */
+.btn-grid thead th:first-child {
+  width: 20%;
+  text-align: left;
+}
+.btn-grid thead th:not(:first-child) {
+  width: 26%;
+}
+
+.btn-grid th,
+.btn-grid td {
+  border: 1px solid var(--color-neutral-300, #ddd);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.btn-grid th {
+  background: var(--color-neutral-100, #f9f9f9);
+}
+
+.btn-grid th[scope="row"] {
+  text-align: left;
+  padding-right: 1rem;
+}

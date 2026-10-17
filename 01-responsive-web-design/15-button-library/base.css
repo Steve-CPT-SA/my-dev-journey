@@ -1,5 +1,5 @@
 .btn {
-  position: relative; /* anchor for ::before */
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11,14 +11,14 @@
   background: var(--btn-bg);
   color: var(--btn-fg);
   border: var(--btn-border);
-  transition: var(--btn-transition);
   cursor: pointer;
-  overflow: hidden; /* clip ::before to corners */
+  overflow: hidden;
+  transition: color var(--btn-slide-duration) var(--btn-slide-easing);
 }
 
 .btn__label {
   position: relative;
-  z-index: 1; /* text above fill */
+  z-index: 1;
 }
 
 .btn::before {
@@ -32,24 +32,41 @@
   z-index: 0;
 }
 
+/* Hover and Active both show the fill */
 .btn:hover:not(:disabled)::before,
-.btn.is-hover::before {
+.btn.is-hover::before,
+.btn:active::before,
+.btn.is-active::before {
   transform: scaleX(1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn:hover:not(:disabled)::before,
-  .btn.is-hover::before {
-    transition: none;
-    transform: scaleX(1);
-  }
+/* Hover text colour */
+.btn:hover:not(:disabled),
+.btn.is-hover {
+  color: var(--btn-hover-fg, var(--btn-fg));
+}
+
+/* Active fill colour + text colour */
+.btn:active::before,
+.btn.is-active::before {
+  background: var(--btn-active-bg);
 }
 
 .btn:active,
 .btn.is-active {
-  background: var(--btn-active-bg);
   color: var(--btn-active-fg, var(--btn-fg));
   border: var(--btn-active-border, var(--btn-border));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn::before { transition: none; }
+  .btn { transition: none; }
+  .btn:hover:not(:disabled)::before,
+  .btn.is-hover::before,
+  .btn:active::before,
+  .btn.is-active::before {
+    transform: scaleX(1);
+  }
 }
 
 .btn:focus-visible,
@@ -89,4 +106,12 @@
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+.btn[aria-busy="true"] {
+  opacity: 1;
+  cursor: progress;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: var(--btn-border);
 }
