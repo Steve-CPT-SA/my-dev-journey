@@ -1,11 +1,12 @@
 /* Primitives */
 :root {
   /* Palette */
-  --color-brand-600: #2563eb;   /* main brand hue */
-  --color-brand-700: #1d4ed8;   /* darker shade for hover */
-  --color-brand-800: #1e40af;   /* darkest shade for active */
-  --color-neutral-100: #f3f4f6; /* light neutral */
-  --color-neutral-900: #111827; /* dark neutral */
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-900: #111827;
   --color-white: #ffffff;
 
   /* Spacing scale */
@@ -22,26 +23,11 @@
   /* Motion */
   --duration-fast: 150ms;
   --easing-default: ease-out;
+}
 
-  /* Semantics */
-  /* Primary button */
-  --btn-primary-bg: var(--color-brand-600);
-  --btn-primary-fg: var(--color-white);
-  --btn-primary-border: none;
-
-  /* States */
-  --btn-primary-hover-bg: var(--color-brand-700);
-  --btn-primary-active-bg: var(--color-brand-800);
-  --btn-primary-focus-ring: 2px solid var(--color-neutral-900);
-
-  /* Disabled */
-  --btn-primary-disabled-bg: var(--color-neutral-100);
-  --btn-primary-disabled-fg: var(--color-neutral-900);
-
-  /* Loading */
-  --btn-primary-loading-fg: var(--color-white);
-
-  /* Shared tokens */
+/* Semantics */
+:root {
+   /* Shared tokens */
   --btn-padding-y: var(--space-2);
   --btn-padding-x: var(--space-4);
   --btn-radius: var(--radius-sm);
@@ -49,4 +35,15 @@
   --btn-font-weight: var(--font-weight-medium);
   --btn-transition: transform var(--duration-fast) var(--easing-default),
                     background-color var(--duration-fast) var(--easing-default);
+
+  /* Focus ring: consistent across variants */
+  --btn-focus-ring: 2px solid var(--color-neutral-900);
+
+  /* Disabled opacity: shared fade */
+  --btn-disabled-opacity: 0.6;
+
+  /* Slide mechanism: consistent motion */
+  --btn-slide-duration: var(--duration-fast);
+  --btn-slide-easing: var(--easing-default);
+  --btn-slide-direction: left;
 }
