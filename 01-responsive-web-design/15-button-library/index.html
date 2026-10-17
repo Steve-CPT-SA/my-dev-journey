@@ -1,113 +1,84 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Button Component Library Demo</title>
-        <link rel = "stylesheet" href = "tokens.css">
-        <link rel = "stylesheet" href = "base.css">
-        <link rel = "stylesheet" href = "variants.css">
-        <link rel = "stylesheet" href = "demo.css">
-    </head>
-    <body>
-        <main>
-            <h1>Button Library Showcase</h1>
-            <table class="btn-grid">
-            <thead>
-                <tr>
-                <th>State</th>
-                <th>Primary</th>
-                <th>Secondary</th>
-                <th>Ghost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Rest</td>
-                    <td>
-                        <button class="btn btn--primary">Primary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary">Secondary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost">Ghost</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hover</td>
-                    <td>
-                        <button class="btn btn--primary is-hover">Primary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary is-hover">Secondary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost is-hover">Ghost</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Active</td>
-                    <td>
-                        <button class="btn btn--primary is-active">Primary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary is-active">Secondary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost is-active">Ghost</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Focus-visible</td>
-                    <td>
-                        <button class="btn btn--primary is-focus">Primary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary is-focus">Secondary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost is-focus">Ghost</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Disabled</td>
-                    <td>
-                        <button class="btn btn--primary" disabled>Primary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary" disabled>Secondary</button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost" disabled>Ghost</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Loading</td>
-                    <td>
-                        <button class="btn btn--primary" disabled aria-busy="true">
-                        <span class="btn__label">Primary</span>
-                        <span class="btn__spinner" aria-hidden="true"></span>
-                        <span class="visually-hidden">Loading…</span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn--secondary" disabled aria-busy="true">
-                        <span class="btn__label">Secondary</span>
-                        <span class="btn__spinner" aria-hidden="true"></span>
-                        <span class="visually-hidden">Loading…</span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn--ghost" disabled aria-busy="true">
-                        <span class="btn__label">Ghost</span>
-                        <span class="btn__spinner" aria-hidden="true"></span>
-                        <span class="visually-hidden">Loading…</span>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-            </table>
-        </main>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component Library Demo</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="variants.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <main>
+    <h1>Button Library Showcase</h1>
+    <table class="btn-grid">
+      <caption>Button states across variants</caption>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Primary</th>
+          <th>Secondary</th>
+          <th>Ghost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Rest</th>
+          <td><button type="button" class="btn btn--primary"><span class="btn__label">Primary</span></button></td>
+          <td><button type="button" class="btn btn--secondary"><span class="btn__label">Secondary</span></button></td>
+          <td><button type="button" class="btn btn--ghost"><span class="btn__label">Ghost</span></button></td>
+        </tr>
+        <tr>
+          <th scope="row">Hover</th>
+          <td><button type="button" class="btn btn--primary is-hover"><span class="btn__label">Primary</span></button></td>
+          <td><button type="button" class="btn btn--secondary is-hover"><span class="btn__label">Secondary</span></button></td>
+          <td><button type="button" class="btn btn--ghost is-hover"><span class="btn__label">Ghost</span></button></td>
+        </tr>
+        <tr>
+          <th scope="row">Active</th>
+          <td><button type="button" class="btn btn--primary is-active"><span class="btn__label">Primary</span></button></td>
+          <td><button type="button" class="btn btn--secondary is-active"><span class="btn__label">Secondary</span></button></td>
+          <td><button type="button" class="btn btn--ghost is-active"><span class="btn__label">Ghost</span></button></td>
+        </tr>
+        <tr>
+          <th scope="row">Focus-visible</th>
+          <td><button type="button" class="btn btn--primary is-focus"><span class="btn__label">Primary</span></button></td>
+          <td><button type="button" class="btn btn--secondary is-focus"><span class="btn__label">Secondary</span></button></td>
+          <td><button type="button" class="btn btn--ghost is-focus"><span class="btn__label">Ghost</span></button></td>
+        </tr>
+        <tr>
+          <th scope="row">Disabled</th>
+          <td><button type="button" class="btn btn--primary" disabled><span class="btn__label">Primary</span></button></td>
+          <td><button type="button" class="btn btn--secondary" disabled><span class="btn__label">Secondary</span></button></td>
+          <td><button type="button" class="btn btn--ghost" disabled><span class="btn__label">Ghost</span></button></td>
+        </tr>
+        <tr>
+          <th scope="row">Loading</th>
+          <td>
+            <button type="button" class="btn btn--primary" disabled aria-busy="true">
+              <span class="btn__label">Primary</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+              <span class="visually-hidden">Loading…</span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn--secondary" disabled aria-busy="true">
+              <span class="btn__label">Secondary</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+              <span class="visually-hidden">Loading…</span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn--ghost" disabled aria-busy="true">
+              <span class="btn__label">Ghost</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+              <span class="visually-hidden">Loading…</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
 </html>
