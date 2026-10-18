@@ -2,7 +2,7 @@
 .btn--primary {
   --btn-bg: var(--color-brand-600);
   --btn-fg: var(--color-white);
-  --btn-border: 1px solid transparent;
+  --btn-border: 1px solid var(--btn-hover-bg);
   --btn-hover-bg: var(--color-brand-700);
   --btn-active-bg: var(--color-brand-800);
   --btn-disabled-bg: var(--color-neutral-100);
