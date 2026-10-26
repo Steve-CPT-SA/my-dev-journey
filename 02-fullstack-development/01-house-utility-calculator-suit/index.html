@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="a four calculator suit that includes a basic calculator, an energy calculator, cost estimator and an appliance comparison.">
+    <title>House Utility Calculator Suit</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+    <body>
+        <header>
+
+            <h1>House Utility Calculator Suit</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#basic-calculator">Basic Calculator</a></li>
+                    <li><a href="#energy-calculator">Energy Calculator</a></li>
+                    <li><a href="#cost-estimator">Cost Estimator</a></li>
+                    <li><a href="#appliance-comparison">Appliance Comparison</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="home">
+            <section>
+                <h2>Welcome to the House Utility Calculator Suit</h2>
+                <p>This suite includes four calculators to help you manage your household utilities:</p>
+                <ul>
+                    <li><a href="#basic-calculator">Basic Calculator</a></li>
+                    <li><a href="#energy-calculator">Energy Calculator</a></li>
+                    <li><a href="#cost-estimator">Cost Estimator</a></li>
+                    <li><a href="#appliance-comparison">Appliance Comparison</a></li>
+                </ul>
+            </section>
+
+            <section id="basic-calculator">
+                <h2>Basic Calculator</h2>
+                <p>Use this calculator for simple arithmetic operations.</p>
+                 <input type="text" id="display" disabled>
+                 <div class="buttons">
+                    <button class="btn" onclick="clearDisplay()">C</button>
+                    <button class="btn" onclick="deleteLast()">←</button>
+                    <button class="btn" onclick="appendToDisplay('/')">/</button>
+                    <button class="btn" onclick="appendToDisplay('*')">*</button>
+                    <button class="btn" onclick="appendToDisplay('7')">7</button>
+                    <button class="btn" onclick="appendToDisplay('8')">8</button>
+                    <button class="btn" onclick="appendToDisplay('9')">9</button>
+                    <button class="btn" onclick="appendToDisplay('-')">-</button>
+                    <button class="btn" onclick="appendToDisplay('4')">4</button>
+                    <button class="btn" onclick="appendToDisplay('5')">5</button>
+                    <button class="btn" onclick="appendToDisplay('6')">6</button>
+                    <button class="btn" onclick="appendToDisplay('+')">+</button>
+                    <button class="btn" onclick="appendToDisplay('1')">1</button>
+                    <button class="btn" onclick="appendToDisplay('2')">2</button>
+                    <button class="btn" onclick="appendToDisplay('3')">3</button>
+                    <button class="btn" onclick="appendToDisplay('0')">0</button>
+                    <button class="btn" onclick="appendToDisplay('.')">.</button>
+                    <button class="btn equal" onclick="calculateResult()">=</button>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>
