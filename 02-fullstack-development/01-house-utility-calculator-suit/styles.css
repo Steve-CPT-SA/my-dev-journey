@@ -200,22 +200,22 @@ section h2 {
 }
 
 /* Welcome section cards */
-#home article {
+.cards article {
     padding: var(--space-4);
     background-color: var(--color-surface-muted);
     border-left: 4px solid var(--color-brand);
     border-radius: var(--radius-sm);
 }
 
-#home article + article {
+.cards article + article {
     margin-top: var(--space-3);
 }
 
-#home article h3 {
+.cards article h3 {
     color: var(--color-brand);
 }
 
-#home article p {
+.cards article p {
     margin-bottom: 0;
 }
 
