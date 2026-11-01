@@ -1,20 +1,38 @@
 const display = document.getElementById("basic-display");
-
 const buttons = document.querySelectorAll(".btn");
-console.log(buttons);
+const operators = ["+", "-", "*", "/"];
+
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {       
         const value = button.dataset.value;
-        console.log(value);
+        const lastChar = display.value.slice(-1);
+        const currentIsOperator = operators.includes(value);
+        const lastIsOperator = operators.includes(lastChar);
 
-        if (value) {
-            display.value += value; 
-        } else {
-            console.log("");
+        if (currentIsOperator && lastIsOperator) {
+            display.value = display.value.slice(0, -1) + value;
+        } else if (value === (".")) {
+            const numbers = display.value.split(/[+\-*/]/);
+            const currentNumber = numbers[numbers.length - 1];
+
+            if (!currentNumber.includes(".")) {
+                display.value += value;
+            } 
+        } else if (value) {
+            const numbers = display.value.split(/[+\-*/]/);
+            const currentNumber = numbers[numbers.length - 1];
+
+            if (currentNumber === "0") {
+                display.value = display.value.slice(0, -1) + value;
+            } else {
+                display.value += value;
+            }
         }
     });
 });
+
+
 
 const clearButton = document.getElementById("clear");
 
@@ -36,20 +54,13 @@ equalsButton.addEventListener("click", () => {
 
     if (expression.includes("+")) {
         display.value = add(expression);
-    }
-
-    if (expression.includes("-")) {
+    } else if (expression.includes("-")) {
         display.value = subtract(expression);
-    }
-
-    if (expression.includes("/")) {
+    } else if (expression.includes("/")) {
         display.value = divide(expression);
-    }
-
-    if (expression.includes("*")) {
+    } else if (expression.includes("*")) {
         display.value = multiply(expression);
     }
-
 });
 
 const add = expression => {
@@ -58,36 +69,21 @@ const add = expression => {
 };
 
 const subtract = expression => {
-    const parts = expression.split("-");
-    const firstNumber = parts[0];
-    const secondNum = parts[1];
-    const num1 = parseFloat(firstNumber);
-    const num2 = parseFloat(secondNum);
-    const result = num1 - num2;
-    return result;
+    const [num1, num2] = getNumbers(expression, "-");
+    return num1 - num2;
 };
 
 const divide = expression => {
-    const parts = expression.split("/");
-    const firstNumber = parts[0];
-    const secondNumber = parts[1];
-    const num1 = parseFloat(firstNumber);
-    const num2 = parseFloat(secondNumber);
-    const result = num1 / num2;
-    return result;
-}
+    const [num1, num2] = getNumbers(expression, "/");
+    return num1 / num2;
+};
 
 const multiply = expression => {
-    const parts = expression.split("*");
-    const firstNumber = parts[0];
-    const secondNumber = parts[1];
-    const num1 = parseFloat(firstNumber);
-    const num2 = parseFloat(secondNumber);
-    const result = num1 * num2;
-    return result;
-}
+    const [num1, num2] = getNumbers(expression, "*");
+    return num1 * num2;
+};
 
 const getNumbers = (expression, operator) => {
     const parts = expression.split(operator);
     return parts.map(number => parseFloat(number));
-}
+};
