@@ -1,7 +1,7 @@
 const display = document.getElementById("basic-display");
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll("[data-value]");
 const operators = ["+", "-", "*", "/"];
-
+let hasError = false;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {       
@@ -9,6 +9,15 @@ buttons.forEach(button => {
         const lastChar = display.value.slice(-1);
         const currentIsOperator = operators.includes(value);
         const lastIsOperator = operators.includes(lastChar);
+        const isDigit = !operators.includes(value) && value !== ".";
+
+        if (hasError) {
+            if (isDigit) {
+                display.value = value;
+                hasError = false;
+            }
+            return;
+        }
 
         if (currentIsOperator && lastIsOperator) {
             display.value = display.value.slice(0, -1) + value;
@@ -23,7 +32,7 @@ buttons.forEach(button => {
             const numbers = display.value.split(/[+\-*/]/);
             const currentNumber = numbers[numbers.length - 1];
 
-            if (currentNumber === "0") {
+            if (currentNumber === "0" && isDigit) {
                 display.value = display.value.slice(0, -1) + value;
             } else {
                 display.value += value;
@@ -38,11 +47,19 @@ const clearButton = document.getElementById("clear");
 
 clearButton.addEventListener("click", () => {
     display.value = "";
+    hasError = false;
 });
 
 const deleteButton = document.getElementById("delete");
 
 deleteButton.addEventListener("click", () => {
+
+    if (hasError) {
+        display.value = "";
+        hasError = false;
+        return;
+    }
+
     display.value = display.value.slice(0, -1);
     
 });
@@ -51,8 +68,15 @@ const equalsButton = document.getElementById("equals");
 
 equalsButton.addEventListener("click", () => {
     const expression = display.value;
+    const lastChar = expression.slice(-1);
+    
+    if (hasError) {
+        return;
+    }
 
-    if (expression.includes("+")) {
+    if (operators.includes(lastChar)) {
+        return;
+    } else if (expression.includes("+")) {
         display.value = add(expression);
     } else if (expression.includes("-")) {
         display.value = subtract(expression);
@@ -61,6 +85,7 @@ equalsButton.addEventListener("click", () => {
     } else if (expression.includes("*")) {
         display.value = multiply(expression);
     }
+    
 });
 
 const add = expression => {
@@ -75,6 +100,11 @@ const subtract = expression => {
 
 const divide = expression => {
     const [num1, num2] = getNumbers(expression, "/");
+    if (num2 === 0) {
+            hasError = true;
+            return "Error: Cannot divide by zero."
+        }
+
     return num1 / num2;
 };
 
