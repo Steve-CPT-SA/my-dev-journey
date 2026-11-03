@@ -7,10 +7,9 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {       
         const value = button.dataset.value;
         const lastChar = display.value.slice(-1);
-        const currentIsOperator = operators.includes(value);
-        const lastIsOperator = operators.includes(lastChar);
-        const isDigit = !operators.includes(value) && value !== ".";
-
+        const currentIsOperator = isOperator(value);
+        const lastIsOperator = isOperator(lastChar);
+        const isDigit = !isOperator(value) && value !== ".";
         if (hasError) {
             if (isDigit) {
                 display.value = value;
@@ -18,22 +17,15 @@ buttons.forEach(button => {
             }
             return;
         }
-
         if (currentIsOperator && lastIsOperator) {
             display.value = display.value.slice(0, -1) + value;
         } else if (value === (".")) {
-            const numbers = display.value.split(/[+\-*/]/);
-            const currentNumber = numbers[numbers.length - 1];
-
-            if (!currentNumber.includes(".")) {
+            if (canAddDecimal()) {
                 display.value += value;
             } 
         } else if (value) {
-            const numbers = display.value.split(/[+\-*/]/);
-            const currentNumber = numbers[numbers.length - 1];
-
-            if (currentNumber === "0" && isDigit) {
-                display.value = display.value.slice(0, -1) + value;
+            if (isDigit) {
+                handleLeadingZero(value);
             } else {
                 display.value += value;
             }
@@ -42,38 +34,29 @@ buttons.forEach(button => {
 });
 
 
-
 const clearButton = document.getElementById("clear");
-
 clearButton.addEventListener("click", () => {
     display.value = "";
     hasError = false;
 });
 
 const deleteButton = document.getElementById("delete");
-
 deleteButton.addEventListener("click", () => {
-
     if (hasError) {
         display.value = "";
         hasError = false;
         return;
     }
-
     display.value = display.value.slice(0, -1);
-    
 });
 
 const equalsButton = document.getElementById("equals");
-
 equalsButton.addEventListener("click", () => {
     const expression = display.value;
     const lastChar = expression.slice(-1);
-    
     if (hasError) {
         return;
     }
-
     if (operators.includes(lastChar)) {
         return;
     } else if (expression.includes("+")) {
@@ -85,7 +68,6 @@ equalsButton.addEventListener("click", () => {
     } else if (expression.includes("*")) {
         display.value = multiply(expression);
     }
-    
 });
 
 const add = expression => {
@@ -104,7 +86,6 @@ const divide = expression => {
             hasError = true;
             return "Error: Cannot divide by zero."
         }
-
     return num1 / num2;
 };
 
@@ -116,4 +97,25 @@ const multiply = expression => {
 const getNumbers = (expression, operator) => {
     const parts = expression.split(operator);
     return parts.map(number => parseFloat(number));
+};
+
+const getCurrentNumber = () => {
+    const numbers= display.value.split(/[+\-*/]/);
+    return numbers[numbers.length -1];
+};
+
+const isOperator = value => operators.includes(value);
+
+const canAddDecimal = () => {
+    const currentNumber = getCurrentNumber();
+    return !currentNumber.includes(".");
+};
+
+const handleLeadingZero = value => {
+    const currentNumber = getCurrentNumber();
+    if (currentNumber === "0") {
+        display.value = display.value.slice(0, -1) + value;
+    } else {
+        display.value += value;
+    }
 };
