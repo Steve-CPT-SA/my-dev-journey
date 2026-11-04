@@ -33,7 +33,6 @@ buttons.forEach(button => {
     });
 });
 
-
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", () => {
     display.value = "";
@@ -119,3 +118,22 @@ const handleLeadingZero = value => {
         display.value += value;
     }
 };
+
+const evaluateExpression = expression => {
+    const tokens = expression.split(/([+\-*/])/);
+    let result = parseFloat(tokens[0]);
+    for (let i = 1; i < tokens.length; i += 2) {
+        const operator = tokens[i];
+        const nextNumber = parseFloat(tokens[i + 1]);
+        if (operator === "+") {
+            result += nextNumber;
+        } else if (operator === "-") {
+            result -= nextNumber;
+        } else if (operator === "*") {
+            result *= nextNumber;
+        } else if (operator === "/") {
+            result /= nextNumber;
+        }
+    }
+    return result;
+}
