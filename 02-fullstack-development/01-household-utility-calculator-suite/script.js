@@ -56,47 +56,11 @@ equalsButton.addEventListener("click", () => {
     if (hasError) {
         return;
     }
-    if (operators.includes(lastChar)) {
+    if (isOperator(lastChar)) {
         return;
-    } else if (expression.includes("+")) {
-        display.value = add(expression);
-    } else if (expression.includes("-")) {
-        display.value = subtract(expression);
-    } else if (expression.includes("/")) {
-        display.value = divide(expression);
-    } else if (expression.includes("*")) {
-        display.value = multiply(expression);
     }
+    display.value = evaluateExpression(expression);
 });
-
-const add = expression => {
-    const [num1, num2] = getNumbers(expression, "+");
-    return num1 + num2;
-};
-
-const subtract = expression => {
-    const [num1, num2] = getNumbers(expression, "-");
-    return num1 - num2;
-};
-
-const divide = expression => {
-    const [num1, num2] = getNumbers(expression, "/");
-    if (num2 === 0) {
-            hasError = true;
-            return "Error: Cannot divide by zero."
-        }
-    return num1 / num2;
-};
-
-const multiply = expression => {
-    const [num1, num2] = getNumbers(expression, "*");
-    return num1 * num2;
-};
-
-const getNumbers = (expression, operator) => {
-    const parts = expression.split(operator);
-    return parts.map(number => parseFloat(number));
-};
 
 const getCurrentNumber = () => {
     const numbers= display.value.split(/[+\-*/]/);
@@ -132,8 +96,12 @@ const evaluateExpression = expression => {
         } else if (operator === "*") {
             result *= nextNumber;
         } else if (operator === "/") {
+            if (nextNumber === 0) {
+                hasError = true;
+                return "Error: Cannot divide by zero.";
+            }
             result /= nextNumber;
         }
     }
     return result;
-}
+};
