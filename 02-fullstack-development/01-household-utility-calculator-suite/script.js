@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll("[data-value]");
 const operators = ["+", "-", "*", "/"];
 let hasError = false;
 
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {       
         const value = button.dataset.value;
@@ -104,4 +105,29 @@ const evaluateExpression = expression => {
         }
     }
     return result;
+};
+
+const reduceMultiplyDivide = tokens => {
+    while (tokens.includes("*") || tokens.includes("/")) {
+       for (let i = 0; i < tokens.length; i++) {
+        if (tokens[i] === "*" || tokens[i] === "/") {
+            const left = parseFloat(tokens[i - 1]);
+            const right = parseFloat(tokens[i + 1]);
+            let result;
+            if (tokens[i] === "*") {
+                result = left * right;
+            } else if (tokens[i] === "/") {
+                if (right === 0) {
+                    hasError = true;
+                    result = "Error: Cannot divide by zero.";
+                } else {
+                    result = left / right;
+                }
+            }
+            tokens.splice(i - 1, 3, result.toString());
+            break;
+        }
+       } 
+    }
+    return tokens;
 };
