@@ -85,7 +85,11 @@ const handleLeadingZero = value => {
 };
 
 const evaluateExpression = expression => {
-    const tokens = expression.split(/([+\-*/])/);
+    let tokens = expression.split(/([+\-*/])/);
+    tokens = reduceMultiplyDivide(tokens);
+    if (tokens[0] === "Error: Cannot divide by zero.") {
+        return tokens[0];
+    }
     let result = parseFloat(tokens[0]);
     for (let i = 1; i < tokens.length; i += 2) {
         const operator = tokens[i];
@@ -94,14 +98,6 @@ const evaluateExpression = expression => {
             result += nextNumber;
         } else if (operator === "-") {
             result -= nextNumber;
-        } else if (operator === "*") {
-            result *= nextNumber;
-        } else if (operator === "/") {
-            if (nextNumber === 0) {
-                hasError = true;
-                return "Error: Cannot divide by zero.";
-            }
-            result /= nextNumber;
         }
     }
     return result;
