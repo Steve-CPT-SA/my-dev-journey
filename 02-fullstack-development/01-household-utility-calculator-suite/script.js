@@ -2,7 +2,7 @@ const display = document.getElementById("basic-display");
 const buttons = document.querySelectorAll("[data-value]");
 const operators = ["+", "-", "*", "/"];
 let hasError = false;
-
+let hasResult = false;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {       
@@ -17,6 +17,14 @@ buttons.forEach(button => {
                 hasError = false;
             }
             return;
+        }
+        if (hasResult && isDigit) {
+            display.value = value;
+            hasResult = false;
+            return;
+        }
+        if (hasResult && currentIsOperator) {
+            hasResult = false;
         }
         if (currentIsOperator && lastIsOperator) {
             display.value = display.value.slice(0, -1) + value;
@@ -61,6 +69,7 @@ equalsButton.addEventListener("click", () => {
         return;
     }
     display.value = evaluateExpression(expression);
+    hasResult = true;
 });
 
 const getCurrentNumber = () => {
@@ -100,7 +109,7 @@ const evaluateExpression = expression => {
             result -= nextNumber;
         }
     }
-    return result;
+    return Number(result.toFixed(10));
 };
 
 const reduceMultiplyDivide = tokens => {
