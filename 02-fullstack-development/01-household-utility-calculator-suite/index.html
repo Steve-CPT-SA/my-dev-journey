@@ -71,7 +71,17 @@
             <section id="energy-calculator">
                 <h2>Energy Calculator</h2>
                 <p>Use this to calculate assumed energy consumption.</p>
-                <p class="calculator-formula">E(kWh) = Power(W) x Time(h) ÷ 1000</p>
+                <div class="calculator-formula">
+                    <span>E(kWh) = </span>
+                    <span class="fraction">
+                        <span class="numerator">
+                            Power(W) x Time(h) 
+                        </span>
+                        <span class="denominator">
+                            1000
+                        </span>
+                    </span>
+                </div>
                 <div class="form-group">
                     <label for="power">Power Rating (W)</label>
                     <input type="number" id="power" min="0" placeholder="Enter power in Watts">
