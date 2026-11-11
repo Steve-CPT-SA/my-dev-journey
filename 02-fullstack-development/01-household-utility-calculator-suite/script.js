@@ -1,3 +1,4 @@
+//Basic Calculator
 const display = document.getElementById("basic-display");
 const buttons = document.querySelectorAll("[data-value]");
 const operators = ["+", "-", "*", "/"];
@@ -136,3 +137,16 @@ const reduceMultiplyDivide = tokens => {
     }
     return tokens;
 };
+
+// Energy Calculator
+const powerInput = document.getElementById("power");
+const hoursInput = document.getElementById("hours");
+const calculateButton = document.getElementById("calculate-energy");
+const energyOutput = document.getElementById("energy-output");
+
+calculateButton.addEventListener("click", () => {
+    const power = Number(powerInput.value);
+    const hours = Number(hoursInput.value);
+    const energy = (power * hours) / 1000;
+    energyOutput.value = `${energy} KWh`;
+});
