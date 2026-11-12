@@ -148,10 +148,9 @@ calculateButton.addEventListener("click", () => {
     const power = Number(powerInput.value);
     const hours = Number(hoursInput.value);
     if (power <= 0 || hours <= 0) {
-        energyOutput.value = "Enter values greater than zero.";
+        energyOutput.textContent = "Enter values greater than zero.";
         return;
     }
     const energy = (power * hours) / 1000;
-    energyOutput.value = `${energy} KWh`;
-    
+    energyOutput.textContent = `${energy} KWh`; 
 });

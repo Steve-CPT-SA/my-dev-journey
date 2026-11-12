@@ -393,8 +393,15 @@ section h2 {
 }
 
 #energy-output {
-    color: var(--color-brand);
+    display: block;
+    width: 100%;
+    max-width: 28rem;
+    padding: var(--space-3);
+    color: var(--color-text);
     background-color: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font: inherit;
     font-weight: 600;
 }
 

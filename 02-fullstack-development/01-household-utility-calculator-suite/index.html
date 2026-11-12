@@ -34,7 +34,7 @@
                     <p>Calculate appliance energy consumption in kWh.</p>
                 </article>
                 <article>
-                    <h3>Cost Estimator</h3>
+                    <h3>Electricity Cost Estimator</h3>
                     <p>Estimate electricity costs based on tariff rates.</p>
                 </article>
                 <article>
@@ -46,33 +46,33 @@
                 <h2>Basic Calculator</h2>
                 <p>Use this calculator for simple arithmetic operations.</p>
                 <label for="basic-display">Calculator Display</label>
-                <input type="text" id="basic-display" readonly>
+                <input type="text" id="basic-display" aria-label="polite" readonly>
                 <div class="calculator-buttons">
-                    <button class="btn btn--clear" id="clear" aria-label="Clear">C</button>
-                    <button class="btn btn--delete" id="delete" aria-label="Delete">←</button>
-                    <button class="btn btn--operator" data-value="/" aria-label="Divide">/</button>
-                    <button class="btn btn--operator" data-value="*" aria-label="Multiply">*</button>
-                    <button class="btn btn--number" data-value="7">7</button>
-                    <button class="btn btn--number" data-value="8">8</button>
-                    <button class="btn btn--number" data-value="9">9</button>
-                    <button class="btn btn--operator" data-value="-" aria-label="Subtract">-</button>
-                    <button class="btn btn--number" data-value="4">4</button>
-                    <button class="btn btn--number" data-value="5">5</button>
-                    <button class="btn btn--number" data-value="6">6</button>
-                    <button class="btn btn--operator" data-value="+" aria-label="Add">+</button>
-                    <button class="btn btn--number" data-value="1">1</button>
-                    <button class="btn btn--number" data-value="2">2</button>
-                    <button class="btn btn--number" data-value="3">3</button>
-                    <button class="btn btn--number" data-value="0">0</button>
-                    <button class="btn btn--number" data-value=".">.</button>
-                    <button class="btn btn--equal" id="equals" aria-label="Calculate result">=</button>
+                    <button type="button" class="btn btn--clear" id="clear" aria-label="Clear">C</button>
+                    <button type="button" class="btn btn--delete" id="delete" aria-label="Delete">←</button>
+                    <button type="button" class="btn btn--operator" data-value="/" aria-label="Divide">/</button>
+                    <button type="button" class="btn btn--operator" data-value="*" aria-label="Multiply">*</button>
+                    <button type="button" class="btn btn--number" data-value="7">7</button>
+                    <button type="button" class="btn btn--number" data-value="8">8</button>
+                    <button type="button" class="btn btn--number" data-value="9">9</button>
+                    <button type="button" class="btn btn--operator" data-value="-" aria-label="Subtract">-</button>
+                    <button type="button" class="btn btn--number" data-value="4">4</button>
+                    <button type="button" class="btn btn--number" data-value="5">5</button>
+                    <button type="button" class="btn btn--number" data-value="6">6</button>
+                    <button type="button" class="btn btn--operator" data-value="+" aria-label="Add">+</button>
+                    <button type="button" class="btn btn--number" data-value="1">1</button>
+                    <button type="button" class="btn btn--number" data-value="2">2</button>
+                    <button type="button" class="btn btn--number" data-value="3">3</button>
+                    <button type="button" class="btn btn--number" data-value="0">0</button>
+                    <button type="button" class="btn btn--number" data-value=".">.</button>
+                    <button type="button" class="btn btn--equal" id="equals" aria-label="Calculate result">=</button>
                 </div>
             </section>
             <section id="energy-calculator">
                 <h2>Energy Calculator</h2>
                 <p>Use this to calculate assumed energy consumption.</p>
                 <div class="calculator-formula">
-                    <span>E(KWh) = </span>
+                    <span>E(kWh) = </span>
                     <span class="fraction">
                         <span class="numerator">
                             Power(W) x Time(h) 
@@ -90,15 +90,43 @@
                     <label for="hours">Average operating time (hours)</label>
                     <input type="number" id="hours" min="0" step="0.01" placeholder="Enter operating time in hours">
                 </div>
-                <button id="calculate-energy">Calculate Energy</button>
+                <button type="button" id="calculate-energy">Calculate Energy</button>
                 <div id="energy-result" class="form-group">
                     <label for="energy-output">Total Energy Consumption (kWh)</label>
-                    <input type="text" id="energy-output" readonly>
+                    <output id="energy-output">--</output>
                 </div>
             </section>
             <section id="cost-estimator">
-                <h2>Cost Estimator</h2>
-                <p>Coming soon.</p>
+                <h2>Electricity Cost Estimator</h2>
+                <p>Estimate your electricity costs based on your energy consumption and local electricity tariff.</p>
+                <form id="cost-form">
+                    <div class="form-group">
+                        <label for="tariff-type">Tariff Type</label>
+                        <select id="tariff-type" name="tariff-type" required>
+                            <option value="" disabled selected>Select tariff type</option>
+                            <option value="flat">Flat Rate</option>
+                            <option value="tiered">Tiered Rate</option>
+                            <option value="time-of-use">Time-Of-Use</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="consumption">Energy Consumption (kWh)</label>
+                        <input type="number" id="consumption" name="consumption" min="0" step="any" placeholder="Enter consumption in kWh" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tariff-rate">Electricity Rate (per kWh)</label>
+                        <input type="number" id="tariff-rate" name="tariff-rate" min="0" step="any" placeholder="Enter your local tarif" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency Code</label>
+                        <input type="text" id="currency" name="currency" maxlength="3" pattern="[A-Za-z]{3}" placeholder="e.g. ZAR, USD, EUR" required>
+                    </div>
+                    <button type="submit" id="calculate-cost">Calculate Cost</button>
+                </form>
+                <div id="cost-result" aria-live="polite">
+                    <h3>Estimated Electricity Cost</h3>
+                    <output id="cost-output" for="consumption tariff-rate">--</output>
+                </div>
             </section>
             <section id="appliance-comparison">
                 <h2>Appliance Comparison</h2>
