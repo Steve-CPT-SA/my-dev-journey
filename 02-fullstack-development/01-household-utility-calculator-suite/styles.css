@@ -320,7 +320,7 @@ section h2 {
 }
 
 /* Energy Calculator */
-#energy-calculator {
+.calculator-form {
     max-width: 40rem;
     margin-inline: auto;
 }
@@ -352,17 +352,17 @@ section h2 {
     padding-top: var(--space-1);
 }
 
-#energy-calculator .form-group {
+.calculator-form .form-group {
     margin-bottom: var(--space-4);
 }
 
-#energy-calculator label {
+.calculator-form label {
     display: block;
     margin-bottom: var(--space-2);
     font-weight: 600;
 }
 
-#energy-calculator input {
+.calculator-form input {
     width: 100%;
     max-width: 28rem;
     padding: var(--space-3);
@@ -372,13 +372,13 @@ section h2 {
     border-radius: var(--radius-md);
 }
 
-#energy-calculator input:focus {
+.calculator-form input:focus {
     outline: none;
     border-color: var(--color-brand);
     box-shadow: var(--shadow-focus);
 }
 
-#calculate-energy {
+.btn-calculate {
     padding: var(--space-3) var(--space-4);
     color: var(--color-text-inverse);
     background-color: var(--color-calculator-action);
@@ -388,11 +388,11 @@ section h2 {
     transition: background-color 150ms ease;
 }
 
-#calculate-energy:hover {
+.btn-calculate:hover {
     background-color: var(--color-calculator-action-hover);
 }
 
-#energy-output {
+.output {
     display: block;
     width: 100%;
     max-width: 28rem;

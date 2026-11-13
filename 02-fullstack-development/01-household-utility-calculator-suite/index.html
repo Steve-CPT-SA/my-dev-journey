@@ -68,9 +68,9 @@
                     <button type="button" class="btn btn--equal" id="equals" aria-label="Calculate result">=</button>
                 </div>
             </section>
-            <section id="energy-calculator">
+            <section id="energy-calculator" class="calculator-form">
                 <h2>Energy Calculator</h2>
-                <p>Use this to calculate assumed energy consumption.</p>
+                <p>Calculate assumed energy consumption.</p>
                 <div class="calculator-formula">
                     <span>E(kWh) = </span>
                     <span class="fraction">
@@ -90,42 +90,34 @@
                     <label for="hours">Average operating time (hours)</label>
                     <input type="number" id="hours" min="0" step="0.01" placeholder="Enter operating time in hours">
                 </div>
-                <button type="button" id="calculate-energy">Calculate Energy</button>
+                <button type="button" class="btn-calculate" id="calculate-energy">Calculate Energy</button>
                 <div id="energy-result" class="form-group">
                     <label for="energy-output">Total Energy Consumption (kWh)</label>
-                    <output id="energy-output">--</output>
+                    <output id="energy-output" class="output">--</output>
                 </div>
             </section>
-            <section id="cost-estimator">
+            <section id="cost-estimator" class="calculator-form">
                 <h2>Electricity Cost Estimator</h2>
-                <p>Estimate your electricity costs based on your energy consumption and local electricity tariff.</p>
-                <form id="cost-form">
-                    <div class="form-group">
-                        <label for="tariff-type">Tariff Type</label>
-                        <select id="tariff-type" name="tariff-type" required>
-                            <option value="" disabled selected>Select tariff type</option>
-                            <option value="flat">Flat Rate</option>
-                            <option value="tiered">Tiered Rate</option>
-                            <option value="time-of-use">Time-Of-Use</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="consumption">Energy Consumption (kWh)</label>
-                        <input type="number" id="consumption" name="consumption" min="0" step="any" placeholder="Enter consumption in kWh" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tariff-rate">Electricity Rate (per kWh)</label>
-                        <input type="number" id="tariff-rate" name="tariff-rate" min="0" step="any" placeholder="Enter your local tarif" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="currency">Currency Code</label>
-                        <input type="text" id="currency" name="currency" maxlength="3" pattern="[A-Za-z]{3}" placeholder="e.g. ZAR, USD, EUR" required>
-                    </div>
-                    <button type="submit" id="calculate-cost">Calculate Cost</button>
-                </form>
-                <div id="cost-result" aria-live="polite">
-                    <h3>Estimated Electricity Cost</h3>
-                    <output id="cost-output" for="consumption tariff-rate">--</output>
+                <p>Estimate your electricity costs based on energy consumption and electricity rate.</p>
+                <div class="calculator-formula">
+                    <span>Cost = Consumption(kWh) x Rate</span>
+                </div>
+                <div class="form-group">
+                    <label for="consumption">Energy Consumption (kWh)</label>
+                    <input type="number" id="consumption" name="consumption" min="0" step="any" placeholder="Enter consumption in kWh" required>
+                </div>
+                <div class="form-group">
+                    <label for="tariff-rate">Electricity Rate (per kWh)</label>
+                    <input type="number" id="tariff-rate" name="tariff-rate" min="0" step="any" placeholder="Enter local tariff rate" required>
+                </div>
+                <div class="form-group">
+                    <label for="currency">Currency (3-letter code)</label>
+                    <input type="text" id="currency" name="currency" maxlength="3" pattern="[A-Za-z]{3}" placeholder="e.g. ZAR, USD, EUR" required>
+                </div>
+                <button type="button" class="btn-calculate" id="calculate-cost">Calculate Cost</button>
+                <div id="cost-result" class="form-group" aria-live="polite">
+                    <label for="cost-output">Estimated Electricity Cost</label>
+                    <output id="cost-output" class="output" for="consumption tariff-rate">--</output>
                 </div>
             </section>
             <section id="appliance-comparison">
