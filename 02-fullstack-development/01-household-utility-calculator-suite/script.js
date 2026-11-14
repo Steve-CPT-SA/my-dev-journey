@@ -154,3 +154,26 @@ calculateButton.addEventListener("click", () => {
     const energy = (power * hours) / 1000;
     energyOutput.textContent = `${energy} KWh`; 
 });
+
+// Cost Estimator
+const consumptionInput = document.getElementById("consumption");
+const tariffRateInput = document.getElementById("tariff-rate");
+const currencyInput = document.getElementById("currency");
+const calculateCostButton = document.getElementById("calculate-cost");
+const costOutput = document.getElementById("cost-output");
+
+calculateCostButton.addEventListener("click", () => {
+    const consumption = Number(consumptionInput.value);
+    const tariffRate = Number(tariffRateInput.value);
+    const currency = currencyInput.value.trim();
+    if (consumption <= 0 || tariffRate <= 0) {
+        costOutput.textContent = "Enter values greater than zero.";
+        return;
+    }
+    if (!/^[A-Za-z]{3}$/.test(currency)) {
+    costOutput.textContent = "Enter a 3-letter currency code.";
+    return;
+    }
+    const cost = consumption * tariffRate;
+    costOutput.textContent = `${currency.toUpperCase()} ${cost.toFixed(2)}`;
+});
