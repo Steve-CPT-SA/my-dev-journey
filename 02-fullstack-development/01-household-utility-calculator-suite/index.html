@@ -120,9 +120,32 @@
                     <output id="cost-output" class="output" for="consumption tariff-rate">--</output>
                 </div>
             </section>
-            <section id="appliance-comparison">
+            <section id="appliance-comparison" class="calculator-form">
                 <h2>Appliance Comparison</h2>
-                <p>Coming soon.</p>
+                <p>Compare appliance consumption</p>
+                <div class="appliance-card">
+                    <h3>Appliance A</h3>
+                    <label for="appliance-a">Appliance Name</label>
+                    <input type="text" id="appliance-a" name="appliance-a" placeholder="Enter appliance A" required>
+                    <label for="power-a">Power Rating (W) for appliance A</label>
+                    <input type="number" id="power-a" min="0" name="power-a" placeholder="Enter power in Watts for appliance A" required>
+                    <label for="hours-a">Average operating time (hours) for applaince A</label>
+                    <input type="number" id="hours-a" name="hours-a" min="0" step="0.01" placeholder="Enter operating time in hours for appliance A" required>
+                </div>
+                <div class="appliance-card form-group">
+                    <h3>Appliance B</h3>
+                    <label for="appliance-b">Appliance Name</label>
+                    <input type="text" id="appliance-b" name="appliance-b" placeholder="Enter appliance B" required>
+                    <label for="power-b">Power Rating (W) for appliance B</label>
+                    <input type="number" id="power-b" name="power-b" min="0" placeholder="Enter power in Watts for appliance B" required>
+                    <label for="hours-b">Average operating time (hours) for appliance B</label>
+                    <input type="number" id="hours-b" name="hours-b" min="0" step="0.01" placeholder="Enter operating time in hours for applaince B" required>
+                </div>
+                <button type="button" class="btn-calculate" id="compare">Compare</button>
+                <div class="form-group" id="compare-result" aria-live="polite">
+                    <label for="compare-output">Comparison Result</label>
+                    <output id="compare-output" class="output" for="appliance-comparison">--</output>
+                </div>
             </section>
         </main>
         <footer>

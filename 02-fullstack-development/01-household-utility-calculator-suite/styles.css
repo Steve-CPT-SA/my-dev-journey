@@ -405,6 +405,15 @@ section h2 {
     font-weight: 600;
 }
 
+/*Appliance card*/
+.appliance-card {
+    margin-bottom: var(--space-5);
+    padding: var(--space-4);
+    background-color: var(--color-surface-muted);
+    border-left: 4px solid var(--color-brand);
+    border-radius: var(--radius-md);
+}
+
 /* Footer */
 footer {
     padding: var(--space-6) var(--space-4);
