@@ -177,3 +177,25 @@ calculateCostButton.addEventListener("click", () => {
     const cost = consumption * tariffRate;
     costOutput.textContent = `${currency.toUpperCase()} ${cost.toFixed(2)}`;
 });
+
+//Appliance Compare
+const applianceAInput = document.getElementById("appliance-a");
+const powerAInput = document.getElementById("power-a");
+const hoursAInput = document.getElementById("hours-a");
+const applianceBInput = document.getElementById("appliance-b");
+const powerBInput = document.getElementById("power-b");
+const hoursBInput = document.getElementById("hours-b");
+const compareButton = document.getElementById("compare");
+const compareOutput = document.getElementById("compare-output");
+
+compareButton.addEventListener("click", () => {
+    const applianceA = applianceAInput.value.trim();
+    const powerA = Number(powerAInput.value);
+    const hoursA = Number(hoursAInput.value);
+    const applianceB = applianceBInput.value.trim();
+    const powerB = Number(powerBInput.value);
+    const hoursB = Number(hoursBInput.value);
+    const energyA = (powerA * hoursA) / 1000;
+    const energyB = (powerB * hoursB) / 1000;
+    compareOutput.textContent = `${applianceA}: ${energyA} kWh, ${applianceB}: ${energyB} kWh`;
+});
