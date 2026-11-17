@@ -405,6 +405,10 @@ section h2 {
     font-weight: 600;
 }
 
+#compare-output {
+    white-space: pre-line;
+}
+
 /*Appliance card*/
 .appliance-card {
     margin-bottom: var(--space-5);

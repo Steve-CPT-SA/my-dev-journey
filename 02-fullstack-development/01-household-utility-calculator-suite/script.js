@@ -187,6 +187,7 @@ const powerBInput = document.getElementById("power-b");
 const hoursBInput = document.getElementById("hours-b");
 const compareButton = document.getElementById("compare");
 const compareOutput = document.getElementById("compare-output");
+const resetComparisonButton = document.getElementById("reset-comparison");
 
 compareButton.addEventListener("click", () => {
     const applianceA = applianceAInput.value.trim();
@@ -197,5 +198,37 @@ compareButton.addEventListener("click", () => {
     const hoursB = Number(hoursBInput.value);
     const energyA = (powerA * hoursA) / 1000;
     const energyB = (powerB * hoursB) / 1000;
-    compareOutput.textContent = `${applianceA}: ${energyA} kWh, ${applianceB}: ${energyB} kWh`;
+    if (!applianceA || !applianceB || powerA <= 0 || powerB <= 0 || hoursA <= 0 || hoursB <= 0) {
+        compareOutput.textContent = "Enter valid values for both appliances.";
+        return;
+    }
+    if (energyA > energyB) {
+        compareOutput.textContent = 
+    `${applianceA}: ${energyA.toFixed(2)} kWh.
+    ${applianceB}: ${energyB.toFixed(2)} kWh.
+        
+    ${applianceA} consumes more energy.`;
+    } else if (energyA < energyB) {
+        compareOutput.textContent = 
+    `${applianceA}: ${energyA.toFixed(2)} kWh.
+    ${applianceB}: ${energyB.toFixed(2)} kWh.
+
+    ${applianceB} consumes more energy.`;
+    } else {
+        compareOutput.textContent = 
+    `${applianceA}: ${energyA.toFixed(2)} kWh.
+    ${applianceB}: ${energyB.toFixed(2)} kWh.
+        
+    Both appliances consume the same amount of energy.`;
+    }
+});
+
+resetComparisonButton.addEventListener("click", () => {
+    applianceAInput.value = "";
+    powerAInput.value = "";
+    hoursAInput.value = "";
+    applianceBInput.value = "";
+    powerBInput.value = "";
+    hoursBInput.value = "";
+    compareOutput.textContent = "--";
 });
