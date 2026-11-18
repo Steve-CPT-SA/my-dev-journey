@@ -91,6 +91,7 @@
                     <input type="number" id="hours" min="0" step="0.01" placeholder="Enter operating time in hours">
                 </div>
                 <button type="button" class="btn-calculate" id="calculate-energy">Calculate Energy</button>
+                <button type="button" class="btn-calculate" id="reset-energy">Reset</button>
                 <div id="energy-result" class="form-group">
                     <label for="energy-output">Total Energy Consumption (kWh)</label>
                     <output id="energy-output" class="output">--</output>
@@ -115,6 +116,7 @@
                     <input type="text" id="currency" name="currency" maxlength="3" pattern="[A-Za-z]{3}" placeholder="e.g. ZAR, USD, EUR" required>
                 </div>
                 <button type="button" class="btn-calculate" id="calculate-cost">Calculate Cost</button>
+                <button type="button" class="btn-calculate" id="reset-cost">Reset</button>
                 <div id="cost-result" class="form-group" aria-live="polite">
                     <label for="cost-output">Estimated Electricity Cost</label>
                     <output id="cost-output" class="output" for="consumption tariff-rate">--</output>

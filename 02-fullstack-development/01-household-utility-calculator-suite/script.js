@@ -143,6 +143,7 @@ const powerInput = document.getElementById("power");
 const hoursInput = document.getElementById("hours");
 const calculateButton = document.getElementById("calculate-energy");
 const energyOutput = document.getElementById("energy-output");
+const resetEnergyButton = document.getElementById("reset-energy");
 
 calculateButton.addEventListener("click", () => {
     const power = Number(powerInput.value);
@@ -155,12 +156,19 @@ calculateButton.addEventListener("click", () => {
     energyOutput.textContent = `${energy} KWh`; 
 });
 
+resetEnergyButton.addEventListener("click", () => {
+    powerInput.value = "";
+    hoursInput.value = "";
+    energyOutput.textContent = "--";
+});
+
 // Cost Estimator
 const consumptionInput = document.getElementById("consumption");
 const tariffRateInput = document.getElementById("tariff-rate");
 const currencyInput = document.getElementById("currency");
 const calculateCostButton = document.getElementById("calculate-cost");
 const costOutput = document.getElementById("cost-output");
+const resetCostButton = document.getElementById("reset-cost");
 
 calculateCostButton.addEventListener("click", () => {
     const consumption = Number(consumptionInput.value);
@@ -176,6 +184,13 @@ calculateCostButton.addEventListener("click", () => {
     }
     const cost = consumption * tariffRate;
     costOutput.textContent = `${currency.toUpperCase()} ${cost.toFixed(2)}`;
+});
+
+resetCostButton.addEventListener("click", () => {
+    consumptionInput.value = "";
+    tariffRateInput.value = "";
+    currencyInput.value = "";
+    costOutput.textContent = "--";
 });
 
 //Appliance Compare
