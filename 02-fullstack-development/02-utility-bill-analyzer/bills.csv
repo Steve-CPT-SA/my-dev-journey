@@ -1,8 +1,9 @@
-Month,ElectricityCost,WaterCost
-January,850,320
-February,900,310
-March,780,340
-April,950,300
-May,870,320
-June,920,315
-July,900,330
+Year,Month,ElectricityCost,WaterCost
+2026,January,850,320
+2026,February,900,310
+2026,March,780,340
+2026,April,950,300
+2026,May,870,320
+2026,June,920,315
+2026,July,900,330
+2026,August,1000,350

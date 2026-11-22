@@ -3,6 +3,13 @@ print("Utility Bill Analyzer")
 print("UTILITY BILL REPORT")
 print("-------------------")
 
+while True:
+    year = input("Enter year: ")
+    if len(year) == 4 and year.isdigit():
+        print("Valid input")
+        break
+    print("Invalid input. Please enter numbers")
+
 months = [
     "January",
     "February",
@@ -40,7 +47,7 @@ while True:
     print("Invalid input. Please enter numbers only.")
 
 with open("bills.csv", "a") as file:
-    file.write(f"{month},{electricity_cost},{water_cost}\n")
+    file.write(f"{year},{month},{electricity_cost},{water_cost}\n")
 print("Bill saved successfully.")
 
 bills = []
@@ -78,19 +85,24 @@ if bills:
     lowest_month = bills[0]["Month"]
     lowest_cost = int(bills[0]["ElectricityCost"]) + int(bills[0]["WaterCost"])
 
+    highest_year = bills[0]["Year"]
+    lowest_year = bills[0]["Year"]
+
     for bill in bills:
         monthly_total = int(bill["ElectricityCost"]) + int(bill["WaterCost"])
 
         if monthly_total > highest_cost:
             highest_cost = monthly_total
             highest_month = bill["Month"]
+            highest_year = bill["Year"]
 
         if monthly_total < lowest_cost:
             lowest_cost = monthly_total
             lowest_month = bill["Month"]
+            lowest_year = bill["Year"]
 
-    print(f"Highest Expense Month: {highest_month} ({highest_cost})")
-    print(f"Lowest Expense Month: {lowest_month} ({lowest_cost})")
+    print(f"Highest Expense Month: {highest_month} {highest_year} ({highest_cost})")
+    print(f"Lowest Expense Month: {lowest_month} {lowest_year} ({lowest_cost})")
 
 else:
     print("No bills found.")
