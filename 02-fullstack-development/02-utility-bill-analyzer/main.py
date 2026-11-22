@@ -2,17 +2,46 @@ import csv
 print("Utility Bill Analyzer")
 print("UTILITY BILL REPORT")
 print("-------------------")
-# month = input("Enter month: ")
-# print(month)
 
-# electricity_cost = input("Enter electricity cost: ")
-# print(electricity_cost)
+months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
 
-# water_cost = input("Enter water cost: ")
-# print(water_cost)
+while True:
+    month = input("Enter month: ")
+    if month in months:
+        print("Valid month")
+        break
+    print("Invalid month. Please enter a full month name.")
 
-# with open("bills.csv", "a") as file:
-#    file.write(f"{month},{electricity_cost},{water_cost}\n")
+while True:
+    electricity_cost = input("Enter electricity cost: ")
+    if electricity_cost.isdigit():
+        print("Valid input")
+        break
+    print("Invalid input. Please enter numbers only.")
+
+while True:
+    water_cost = input("Enter water cost: ")
+    if water_cost.isdigit():
+        print("Valid input")
+        break
+    print("Invalid input. Please enter numbers only.")
+
+with open("bills.csv", "a") as file:
+    file.write(f"{month},{electricity_cost},{water_cost}\n")
+print("Bill saved successfully.")
 
 bills = []
 with open("bills.csv", "r") as file:
