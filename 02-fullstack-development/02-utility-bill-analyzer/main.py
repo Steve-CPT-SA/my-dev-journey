@@ -1,16 +1,6 @@
 import csv
-print("Utility Bill Analyzer")
-print("UTILITY BILL REPORT")
-print("-------------------")
 
-while True:
-    year = input("Enter year: ")
-    if len(year) == 4 and year.isdigit():
-        print("Valid input")
-        break
-    print("Invalid input. Please enter numbers")
-
-months = [
+VALID_MONTHS = [
     "January",
     "February",
     "March",
@@ -26,8 +16,16 @@ months = [
 ]
 
 while True:
+    year = input("Enter year: ")
+    if len(year) == 4 and year.isdigit():
+        print("Valid input")
+        break
+    print("Invalid input. Please enter a 4-digit year.")
+
+
+while True:
     month = input("Enter month: ")
-    if month in months:
+    if month in VALID_MONTHS:
         print("Valid month")
         break
     print("Invalid month. Please enter a full month name.")
@@ -56,7 +54,16 @@ with open("bills.csv", "r") as file:
     for row in reader:
         bills.append(row)
 
+
+
 if bills:
+    print("Utility Bill Analyzer")
+    print("UTILITY BILL REPORT")
+    print("-------------------")
+    print()
+    print(f"Records Analyzed: {len(bills)}")
+    print()
+
     total_electricity = 0
     for bill in bills:
         total_electricity += int(bill["ElectricityCost"])
@@ -104,5 +111,9 @@ if bills:
     print(f"Highest Expense Month: {highest_month} {highest_year} ({highest_cost})")
     print(f"Lowest Expense Month: {lowest_month} {lowest_year} ({lowest_cost})")
 
+    print()
+    print("-------------------")
+    print("End of Report")
 else:
     print("No bills found.")
+
