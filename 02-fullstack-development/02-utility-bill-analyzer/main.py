@@ -59,6 +59,8 @@ if choice == "1":
             break
         print("Invalid input. Please enter numbers only.")
 
+    file_exists = os.path.exists("bills.csv")
+    print(file_exists)
     with open("bills.csv", "a") as file:
         file.write(f"{year},{month},{electricity_cost},{water_cost}\n")
     print("Bill saved successfully.")
