@@ -1,4 +1,6 @@
 import csv
+import os
+
 
 VALID_MONTHS = [
     "January",
@@ -65,10 +67,13 @@ elif choice == "2":
     print("View Report selected")
 
     bills = []
-    with open("bills.csv", "r") as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            bills.append(row)
+    if not os.path.exists("bills.csv"):
+        print("No bill data found yet.")
+    else:
+        with open("bills.csv", "r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                bills.append(row)
 
     if bills:
         print("Utility Bill Analyzer")
