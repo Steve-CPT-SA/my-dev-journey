@@ -1,7 +1,6 @@
 import csv
 import os
 
-
 VALID_MONTHS = [
     "January",
     "February",
@@ -43,29 +42,42 @@ if choice == "1":
             break
         print("Invalid month. Please enter a full month name.")
 
-    while True:
-        electricity_cost = input("Enter electricity cost: ")
-
-        if electricity_cost.isdigit():
-            print("Valid input")
-            break
-        print("Invalid input. Please enter numbers only.")
-
-    while True:
-        water_cost = input("Enter water cost: ")
-
-        if water_cost.isdigit():
-            print("Valid input")
-            break
-        print("Invalid input. Please enter numbers only.")
-
     file_exists = os.path.exists("bills.csv")
-    
-    with open("bills.csv", "a") as file:
-        if not file_exists:
-            file.write("Year,Month,ElectricityCost,WaterCost\n")
+    duplicate_found = False
+
+    if file_exists:
+        with open("bills.csv", "r") as file:
+            reader = csv.DictReader(file)
+
+            for row in reader:
+                if row["Year"] == year and row["Month"] == month:
+                    duplicate_found = True
+
+    if duplicate_found:
+        print(f"A bill already exists for {month} {year}")
+        print("Record was not saved.")
+    else:
+        while True:
+            electricity_cost = input("Enter electricity cost: ")
+
+            if electricity_cost.isdigit():
+                print("Valid input")
+                break
+            print("Invalid input. Please enter numbers only.")
+
+        while True:
+            water_cost = input("Enter water cost: ")
+
+            if water_cost.isdigit():
+                print("Valid input")
+                break
+            print("Invalid input. Please enter numbers only.")
+
+        with open("bills.csv", "a") as file:
+            if not file_exists:
+                file.write("Year,Month,ElectricityCost,WaterCost\n")
             file.write(f"{year},{month},{electricity_cost},{water_cost}\n")
-    print("Bill saved successfully.")
+        print("Bill saved successfully.")
 
 elif choice == "2":
     print("View Report selected")
